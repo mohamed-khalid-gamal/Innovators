@@ -70,7 +70,8 @@ textarea
 
 /* ── Hero CONTAINERS ───────────────────────────────────────────────────── */
 
-header {
+header
+{
     width: 90%;
     height: auto;
     min-height: 100px;
@@ -86,20 +87,23 @@ header {
     flex-wrap: wrap;
 }
 
-header img {
+header img
+{
     height: 70px;
     width: auto;
     margin-right: 24px;
 }
 
-header nav {
+header nav
+{
     display: flex;
     align-items: center;
     font-weight: bold;
     margin: 0 auto;
 }
 
-header ul {
+header ul
+{
     display: flex;
     gap: 45px;
     list-style-type: none;
@@ -107,22 +111,26 @@ header ul {
     flex-wrap: wrap;
 }
 
-header ul li a {
+header ul li a
+{
     color: #06406C;
     transition: 0.3s;
 }
 
-header ul li a:hover {
+header ul li a:hover
+{
     color: #FF7500;
 }
 
-header .i_btn {
+header .i_btn
+{
     display: flex;
     gap: 30px;
     align-items: center;
 }
 
-header .i_btn button {
+header .i_btn button
+{
     width: 165px;
     height: 45px;
     border-radius: 7px;
@@ -132,23 +140,29 @@ header .i_btn button {
     transition: 0.7s;
 }
 
-header .i_btn a {
+header .i_btn a
+{
     color: #fff;
 }
 
-header .i_btn i {
+header .i_btn i
+{
     font-size: larger;
     color: #1364A2;
 }
 
-header .i_btn button:hover {
+header .i_btn button:hover
+{
     transform: scale(1.1);
 }
-.sec1 {
+
+.sec1
+{
     display: flex;
 }
 
-.sec1 .right {
+.sec1 .right
+{
     width: 43%;
     height: auto;
     margin-right: 75px;
@@ -158,7 +172,8 @@ header .i_btn button:hover {
     gap: 36px;
 }
 
-.sec1 .right ul {
+.sec1 .right ul
+{
     display: flex;
     flex-direction: column;
     gap: 13px;
@@ -167,21 +182,25 @@ header .i_btn button:hover {
     color: #06406C;
 }
 
-.sec1 .right ul li::marker {
+.sec1 .right ul li::marker
+{
     font-size: 0.5em;
     color: #06406C;
 }
 
-.sec1 .right ul li span {
+.sec1 .right ul li span
+{
     color: #FF7500;
 }
 
-main .right h1 {
+main .right h1
+{
     font-size: clamp(32px, 4vw, 58px);
     color: #1364A2;
 }
 
-.sec1 .right h1 span {
+.sec1 .right h1 span
+{
     background-color: #F7D9BF;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -189,7 +208,8 @@ main .right h1 {
     padding: 6px 10px 5px 20px;
 }
 
-.sec1 .right h1 span::after {
+.sec1 .right h1 span::after
+{
     content: "";
     position: absolute;
     height: 100%;
@@ -199,7 +219,8 @@ main .right h1 {
     left: 0;
 }
 
-.sec1 .right .div {
+.sec1 .right .div
+{
     position: absolute;
     height: 50%;
     top: -43px;
@@ -211,17 +232,20 @@ main .right h1 {
     border-radius: 8px 8px 0 8px;
 }
 
-.sec1 .right .div p {
+.sec1 .right .div p
+{
     margin-top: 7px;
     color: #fff;
     font-weight: lighter;
 }
 
-main {
+main
+{
     background-color: #F4FAFF;
 }
 
-.sec1 .right .btns {
+.sec1 .right .btns
+{
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -230,7 +254,8 @@ main {
     justify-content: center;
 }
 
-.sec1 .right .btn1 {
+.sec1 .right .btn1
+{
     width: min(153px, 100%);
     height: 35px;
     background-color: #FF7500;
@@ -241,15 +266,18 @@ main {
     transition: 0.7s;
 }
 
-.sec1 .right .btn1 a {
+.sec1 .right .btn1 a
+{
     color: #fff;
 }
 
-.sec1 .right .btn1:hover {
+.sec1 .right .btn1:hover
+{
     transform: scale(1.06);
 }
 
-.sec1 .right .btn2 {
+.sec1 .right .btn2
+{
     width: min(260px, 100%);
     height: 35px;
     background-color: #fff;
@@ -260,112 +288,139 @@ main {
     transition: 0.7s;
 }
 
-.sec1 .right .btn2:hover {
+.sec1 .right .btn2:hover
+{
     transform: scale(1.05);
 }
 
-.sec1 .right .btn2 a {
+.sec1 .right .btn2 a
+{
     color: #FF7500;
 }
 
-.sec1 .left {
+.sec1 .left
+{
     text-align: center;
 }
 
-.sec1 .down {
+.sec1 .down
+{
     top: 120px;
     right: 140px;
     position: relative;
     width: min(500px, 90vw);
 }
 
-.sec1 .up {
+.sec1 .up
+{
     position: absolute;
     width: min(450px, 80vw);
     left: 150px;
     top: 210px;
 }
 
-@media (max-width: 991px) {
-    header {
+@media (max-width: 991px)
+{
+    header
+    {
         padding: 10px;
     }
-    
-    header nav {
+
+    header nav
+    {
         width: 100%;
         justify-content: center;
         margin: 15px 0;
     }
-    
-    header ul {
+
+    header ul
+    {
         gap: 20px;
         font-size: 16px;
         justify-content: center;
     }
-    .sec1{
+
+    .sec1
+    {
         margin-top: 30px;
     }
-    .sec1 .left {
+
+    .sec1 .left
+    {
         display: none;
     }
-    
-    .sec1 .right {
+
+    .sec1 .right
+    {
         width: 100%;
         margin: 30px auto;
         text-align: center;
         padding: 0 20px;
     }
 
-    .sec1 .right h1 {
+    .sec1 .right h1
+    {
         font-size: clamp(28px, 5vw, 42px);
     }
-    
-    .sec1 .right ul {
+
+    .sec1 .right ul
+    {
         font-size: clamp(16px, 3vw, 24px);
         margin-right: 0;
     }
 }
-@media (max-width: 767px) {
-    header {
+
+@media (max-width: 767px)
+{
+    header
+    {
         width: 95%;
     }
-    
-    .sec1 .right {
+
+    .sec1 .right
+    {
         margin-top: 20px;
     }
-    
-    .sec1 .right ul {
+
+    .sec1 .right ul
+    {
         margin-right: 0;
     }
-    
-    .sec1 .right .btns {
+
+    .sec1 .right .btns
+    {
         justify-content: center;
     }
 }
 
-@media (max-width: 480px) {
-    header {
+@media (max-width: 480px)
+{
+    header
+    {
         top: 30px;
     }
-    
-    header img {
+
+    header img
+    {
         height: 50px;
     }
-    
-    .sec1 .right .div {
+
+    .sec1 .right .div
+    {
         padding: 10px;
     }
 }
 
 /* Preserve existing sidebar and hamburger styles */
-.sidebar {
+.sidebar
+{
     position: fixed;
     top: 0;
     right: -260px;
     width: 250px;
     height: 100vh;
     background: #fff;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.08);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.08);
     z-index: 2000;
     transition: right 0.3s;
     padding: 2rem 1rem 1rem 1rem;
@@ -374,11 +429,13 @@ main {
     gap: 1.5rem;
 }
 
-.sidebar.active {
+.sidebar.active
+{
     right: 0;
 }
 
-.sidebar .close-sidebar {
+.sidebar .close-sidebar
+{
     background: none;
     border: none;
     font-size: 2rem;
@@ -387,29 +444,35 @@ main {
     cursor: pointer;
 }
 
-.sidebar ul {
+.sidebar ul
+{
     list-style: none;
     padding: 0;
     margin: 0;
     direction: rtl;
 }
 
-.sidebar ul li {
+.sidebar ul li
+{
     margin-bottom: 1.2rem;
 }
 
-.sidebar ul li a {
+.sidebar ul li a
+{
     color: #06406C;
     font-size: 1.2rem;
     text-decoration: none;
     font-weight: bold;
 }
 
-.sidebar ul li a:hover {
+.sidebar ul li a:hover
+{
     color: #FF7500;
 }
+
 /* Sidebar button styles */
-.sidebar .sidebar-btn {
+.sidebar .sidebar-btn
+{
     width: 100%;
     height: 45px;
     border-radius: 7px;
@@ -419,23 +482,26 @@ main {
     font-weight: bold;
     transition: 0.3s;
     margin-top: 1.5rem;
-  }
-  
-  .sidebar .sidebar-btn a {
+}
+
+.sidebar .sidebar-btn a
+{
     color: #fff;
     text-decoration: none;
     display: block;
     width: 100%;
     height: 100%;
     line-height: 45px;
-  }
-  
-  .sidebar .sidebar-btn:hover {
+}
+
+.sidebar .sidebar-btn:hover
+{
     transform: scale(1.05);
-  }
-  
-  /* Body overlay when sidebar is active */
-  body.sidebar-active::before {
+}
+
+/* Body overlay when sidebar is active */
+body.sidebar-active::before
+{
     content: "";
     position: fixed;
     top: 0;
@@ -444,8 +510,10 @@ main {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1999;
-  }
-.hamburger {
+}
+
+.hamburger
+{
     background: none;
     border: none;
     font-size: 2rem;
@@ -456,29 +524,42 @@ main {
     display: none;
 }
 
-@media (max-width: 991px) {
-    header nav {
+@media (max-width: 991px)
+{
+    header nav
+    {
         display: none !important;
     }
-    header{
-        display: flex!important;
-        justify-content: space-between!important;
+
+    header
+    {
+        display: flex !important;
+        justify-content: space-between !important;
 
     }
-    .hamburger {
-        display: flex!important;
-padding-right: 50%
-;    }
-    .i_btn{
-        display: none !important ;
+
+    .hamburger
+    {
+        display: flex !important;
+        padding-right: 50%;
     }
-    body > main > div > div.right > h1 > span > div{
-        display: none!important;
+
+    .i_btn
+    {
+        display: none !important;
     }
-    .sec1 .right h1 span {
+
+    body>main>div>div.right>h1>span>div
+    {
+        display: none !important;
+    }
+
+    .sec1 .right h1 span
+    {
         height: 50px;
     }
 }
+
 /* ── Courses SECTION ────────────────────────────────────────────────────── */
 
 #courses
@@ -1402,6 +1483,152 @@ footer .under_line
     #courses .title p
     {
         font-size: 0.9rem;
+        text-align: center;
+    }
+}
+
+
+/* ── why SECTION ────────────────────────────────────────────────────── */
+#projects .title,
+#courses .title,
+.header-title
+{
+    text-align: center;
+
+}
+
+#projects .title h3,
+#courses .title h3,
+.header-title h3
+{
+    color: #1364A2;
+    font-size: 45px;
+    text-align: center;
+}
+
+#projects .title p,
+#courses .title p,
+.header-title p
+{
+    color: #2E3C46;
+    margin-top: 0.5rem;
+    font-size: x-large;
+    text-align: center;
+}
+
+#why
+{
+    background: linear-gradient(180deg, #F0F8FE 0%, #F5FBFF 46.15%, #F8FCFF 100%);
+    padding: 4rem 2rem;
+    overflow: hidden;
+    direction: rtl;
+}
+
+#why .content
+{
+    display: flex;
+    justify-content: space-between;
+    min-height: 800px;
+}
+
+#why .images
+{
+    position: relative;
+    width: 50%;
+
+}
+
+#why .images img
+{
+    position: absolute;
+    top: 0;
+}
+
+#why .images img:nth-child(1)
+{
+    z-index: 0;
+    top: 80px;
+    left: 100px;
+    border-radius: 30px;
+    border-width: 8px;
+    width: 440px;
+}
+
+#why .images img:nth-child(2)
+{
+    z-index: 2;
+    top: 282.16px;
+    left: 243px;
+    width: 350px;
+    transform: rotate(10 deg);
+    border-radius: 30px;
+    border-width: 8px;
+}
+
+#why .images img:nth-child(3)
+{
+    z-index: 1;
+    width: 380px;
+    left: 40px;
+    transform: rotate(17.77 deg);
+    border-radius: 30px;
+    top: 250.33px;
+}
+
+#why .text
+{
+    display: flex;
+    width: 1200px;
+    margin-right: 60px;
+    margin-top: 90px;
+}
+
+#why .text ul
+{
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+
+}
+
+#why .text ul li
+{
+    color: #1364A2;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+#why .text ul li i
+{
+    margin-left: 10px;
+}
+
+#why .text ul p
+{
+    color: #2E3C46;
+    font-size: 28px;
+}
+
+@media (max-width: 991px)
+{
+    #why .images
+    {
+        display: none;
+    }
+
+    #why .text ul li
+    {
+        flex-direction: column;
+    }
+
+    #why .text
+    {
         text-align: center;
     }
 }
