@@ -1,12 +1,4 @@
 /* ── RESET & BOX-SIZING ───────────────────────────────────────────────────── */
-*,
-*::before,
-*::after
-{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
 /* ── CUSTOM PROPERTIES ────────────────────────────────────────────────────── */
 :root
@@ -18,6 +10,16 @@
     --font-family: "Tajawal", sans-serif;
     --base-font-size: 16px;
     --line-height: 1.5;
+}
+
+*,
+*::before,
+*::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
 }
 
 /* ── GLOBAL ELEMENT STYLES ───────────────────────────────────────────────── */
@@ -411,7 +413,6 @@ main
     }
 }
 
-/* Preserve existing sidebar and hamburger styles */
 .sidebar
 {
     position: fixed;
@@ -780,7 +781,6 @@ body.sidebar-active::before
 .header-title
 {
     text-align: center;
-
 }
 
 #projects .title h3,
@@ -1630,5 +1630,575 @@ footer .under_line
     #why .text
     {
         text-align: center;
+    }
+}
+
+/*---------------------------- the website after comback----------------  */
+
+
+/* ----------------------- roadmap ---------------------*/
+
+#plan
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    gap: 50px;
+    background: linear-gradient(180deg, #F0F8FE 0%, #F5FBFF 46.15%, #F8FCFF 100%);
+    ;
+}
+
+#plan .road
+{
+    position: relative;
+    padding: 30px 0;
+}
+
+#plan .st
+{
+    position: absolute;
+    left: 0;
+    top: -17px;
+    transform: translateX(-50%);
+}
+
+#plan .end
+{
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    transform: translateX(50%);
+}
+
+#plan .step1
+{
+    position: absolute;
+    top: 33%;
+    right: 25%;
+}
+
+#plan .step2
+{
+    position: absolute;
+    top: 77%;
+    right: 42%;
+}
+
+#plan .step3
+{
+    position: absolute;
+    top: 4%;
+    right: 55%;
+}
+
+#plan .step4
+{
+    position: absolute;
+    top: 48%;
+    right: 70%;
+}
+
+
+
+#plan .text h3
+{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--primary-color);
+    text-align: right;
+}
+
+#plan .text p
+{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: right;
+    color: var(--secondary-color);
+}
+
+#plan .step1 .text
+{
+    position: absolute;
+    right: -294%;
+    top: 7px;
+    width: 295px;
+    height: 8px;
+}
+
+#plan .step2 .text
+{
+    position: absolute;
+    left: -310%;
+    top: 82px;
+    width: 295px;
+    height: 8px;
+}
+
+#plan .step3 .text
+{
+    position: absolute;
+    right: -350%;
+    top: 10px;
+    width: 335px;
+    height: 81px;
+
+}
+
+#plan .step4 .text
+{
+    position: absolute;
+    left: -310%;
+    top: 82px;
+    width: 295px;
+    height: 8px;
+
+}
+
+
+
+/* ---------------------------- certificate ------------------*/
+
+#certificate
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    position: relative;
+    gap: 50px;
+    padding-bottom: 150px;
+    background: linear-gradient(180deg, #F0F8FE 0%, #F5FBFF 46.15%, #F8FCFF 100%);
+}
+
+#certificate h3
+{
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+#certificate .image img
+{
+    width: 1144px;
+    height: 721px;
+    border-radius: 24px;
+    object-fit: cover;
+    object-position: center;
+    border: 5px solid #1364A2;
+}
+
+#certificate>img:nth-child(2)
+{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+#certificate>img:nth-child(4)
+{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+
+
+/*----------------------- pricing ------------------*/
+#pricing
+{
+    background: linear-gradient(180deg, #F0F8FE 0%, #F5FBFF 46.15%, #F8FCFF 100%);
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+#pricing .brands
+{
+    width: 100%;
+}
+
+#pricing .logos
+{
+    display: flex;
+    align-items: center;
+    background-color: var(--back);
+    flex-wrap: wrap;
+    max-width: 100%;
+    min-height: 206px;
+    justify-content: space-between;
+    border-radius: 16px;
+    padding-top: 32px;
+    padding-right: 120px;
+    padding-bottom: 32px;
+    margin-top: 50px;
+    padding-left: 120px;
+}
+
+#pricing .logos img
+{
+    width: 170px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.container-price
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features
+{
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    direction: rtl;
+    width: 595px;
+    height: 632px;
+
+    border-radius: 24px;
+}
+
+.features h2
+{
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.features ul
+{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-between;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.features ul li
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+
+}
+
+.features ul li svg
+{
+    width: 1.2em;
+    height: auto;
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+
+.features ul li span
+{
+    font-size: 1rem;
+    color: #4a4a4a;
+    line-height: 1.4;
+}
+
+.plans
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    direction: rtl;
+}
+
+.plan-card
+{
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    cursor: pointer;
+    width: 496px;
+    height: 200px;
+    border-radius: 16px;
+    gap: 32px;
+    padding-top: 32px;
+    padding-right: 24px;
+    padding-bottom: 32px;
+    padding-left: 24px;
+}
+
+.plan-card:hover
+{
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background: #eaf7ff;
+}
+
+.plan-card.recommended
+{
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.plan-card.recommended:hover
+{
+    background: #1e5e8a;
+}
+
+.plan-header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.plan-header h3
+{
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.plan-card.recommended h3
+{
+    color: white;
+}
+
+.plan-price
+{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff6b3a;
+
+}
+
+.plan-card.recommended .plan-price
+{
+    color: #ff9b3e;
+}
+
+.plan-card.recommended .badge
+{
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.plan-desc
+{
+    font-size: 0.95rem;
+    color: inherit;
+    line-height: 1.5;
+}
+
+.plan-price-con
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+
+/*------------------------------- contact -------------------------------*/
+#contact
+{
+    padding: 4rem 2rem;
+}
+
+#contact .header-title h3
+{
+    padding-bottom: 50px;
+}
+
+.faq-container
+{
+    direction: rtl;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.faq-item
+{
+    background-color: white;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.faq-question
+{
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-weight: 600;
+    position: relative;
+}
+
+.faq-answer
+{
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer.show
+{
+    padding: 0 20px 20px;
+    max-height: 300px;
+}
+
+.circle-icon
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #0d6efd;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .circle-icon
+{
+    transform: rotate(180deg);
+}
+
+.back-icon
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: white;
+    color: #777;
+    border: 1px solid #eee;
+    font-size: 14px;
+}
+
+.contact-section
+{
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 0px 6px 0px #1364A240;
+}
+
+.contact-info
+{
+    flex: 1;
+    padding: 25px;
+    background-color: var(--back);
+    /* box-shadow: 0px 0px 6px 0px #1364A240; */
+}
+
+.contact-form
+{
+    flex: 1.5;
+    padding: 25px;
+}
+
+.contact-title
+{
+    color: #0d6efd;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.contact-item
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.contact-item span:first-child
+{
+    color: var(--secondary-color);
+}
+
+.contact-item .contact-icon
+{
+    margin-left: 10px;
+    color: #0d6efd;
+}
+
+.map-container
+{
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.map-container img
+{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.form-control
+{
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+.btn-submit
+{
+    background-color: #ff7300;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    width: 100%;
+    font-weight: 600;
+}
+
+@media (max-width: 768px)
+{
+    .contact-section
+    {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form
+    {
+        width: 100%;
     }
 }
