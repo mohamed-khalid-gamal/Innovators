@@ -58,7 +58,7 @@ a
 a:hover,
 a:focus
 {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 button,
@@ -78,7 +78,7 @@ header
     height: auto;
     min-height: 100px;
     top: 60px;
-    background-color: #BAD4E7;
+    background-color: var(--back);
     margin: auto;
     border-radius: 15px;
     display: flex;
@@ -155,7 +155,7 @@ header .i_btn i
 
 header .i_btn button:hover
 {
-    transform: scale(1.1);
+    background-color: #ff77008f;
 }
 
 .sec1
@@ -275,7 +275,7 @@ main
 
 .sec1 .right .btn1:hover
 {
-    transform: scale(1.06);
+    background-color: #ff770093;
 }
 
 .sec1 .right .btn2
@@ -292,7 +292,7 @@ main
 
 .sec1 .right .btn2:hover
 {
-    transform: scale(1.05);
+    background-color: #eee;
 }
 
 .sec1 .right .btn2 a

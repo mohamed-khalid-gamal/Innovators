@@ -1,0 +1,107 @@
+/* ملف CSS لتحويل اتجاه الموقع من اليسار إلى اليمين للغة العربية */
+
+/* تطبيق الاتجاه من اليمين إلى اليسار على العناصر الرئيسية */
+html, body {
+    direction: rtl;
+    text-align: right;
+}
+
+/* تعديل اتجاه العناصر في الهيدر */
+header {
+    flex-direction: row-reverse;
+}
+
+header img {
+    margin-right: 0;
+    margin-left: 24px;
+}
+
+header ul {
+    padding-right: 0;
+}
+
+header .i_btn {
+    flex-direction: row-reverse;
+}
+
+/* تعديل اتجاه العناصر في القسم الرئيسي */
+.sec1 .right {
+    margin-right: 0;
+    margin-left: 75px;
+}
+
+.sec1 .right ul {
+    margin-right: 0;
+    margin-left: 33px;
+    padding-right: 20px;
+}
+
+.sec1 .right h1 span {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 6px 20px 5px 10px;
+}
+
+.sec1 .right h1 span::after {
+    left: auto;
+    right: 0;
+}
+
+.sec1 .right .div {
+    left: auto;
+    right: -123px;
+}
+
+/* تعديل اتجاه القائمة الجانبية */
+.sidebar {
+    left: auto;
+    right: -300px;
+    text-align: right;
+}
+
+.sidebar.active {
+    left: auto;
+    right: 0;
+}
+
+.sidebar .close-btn {
+    right: auto;
+    left: 10px;
+}
+
+.sidebar ul {
+    padding-right: 0;
+}
+
+/* تعديل زر القائمة */
+.hamburger {
+    margin-left: 16px;
+    margin-right: auto;
+}
+
+@media (max-width: 991px) {
+    .hamburger {
+        padding-right: 0;
+        padding-left: 50%;
+    }
+}
+
+/* تعديلات إضافية للنموذج */
+.form-group {
+    text-align: right;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    direction: rtl;
+    text-align: right;
+}
+
+.radio-option, .checkbox-option {
+    justify-content: flex-start;
+}

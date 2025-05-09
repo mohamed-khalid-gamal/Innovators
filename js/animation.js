@@ -125,6 +125,7 @@ $(document).ready(function () {
     // Animate icons in the "why" section with staggered effect
     $(".icon-wrapper").each(function (index) {
       var elementPosition = $(this).offset().top;
+
       if (scrollPosition > elementPosition - $(window).height() * 0.9) {
         setTimeout(
           function (element) {

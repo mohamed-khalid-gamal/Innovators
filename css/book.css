@@ -1,0 +1,229 @@
+
+:root
+{
+    --primary-color: #1364A2;
+    --secondary-color: #2E3C46;
+    /* fixed typo */
+    --back: #1364A240;
+    --font-family: "Tajawal", sans-serif;
+    --base-font-size: 16px;
+    --line-height: 1.5;
+}
+
+*,
+*::before,
+*::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+
+/* ── GLOBAL ELEMENT STYLES ───────────────────────────────────────────────── */
+html
+{
+    font-size: var(--base-font-size);
+    line-height: var(--line-height);
+    font-family: var(--font-family);
+    color: var(--secondary-color);
+}
+
+body
+{
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+img,
+picture,
+video,
+canvas,
+svg
+{
+    display: block;
+    max-width: 100%;
+}
+
+a
+{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus
+{
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea
+{
+    font: inherit;
+}
+
+  .form-container
+  {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 50px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .form-header
+  {
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--primary-color);
+  }
+  .form-header p{
+    color: var(--secondary-color);
+  }
+  .form-header img
+  {
+      max-width: 150px;
+      margin: 0 auto 15px;
+      display: block;
+  }
+
+  .form-group
+  {
+      margin-bottom: 20px;
+      justify-content: flex-end;
+      
+
+  }
+  .appointment-section .form-group{
+    border: 1px solid #1364A240;
+border-radius: 16px;
+padding: 10px;
+  }
+
+  .form-label
+  {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      text-align: right;
+      color: var(--primary-color);
+  }
+
+  .form-control
+  {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      direction: rtl;
+  }
+
+  .radio-group,
+  .checkbox-group
+  {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: right;
+  }
+
+  .radio-option,
+  .checkbox-option
+  {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      direction: rtl;
+  }
+
+  .radio-option input[type="radio"]+label,
+  .checkbox-option input[type="checkbox"]+label
+  {
+      transition: all 0.3s;
+      font-weight: 500;
+      font-size: 18px;
+  }
+
+  .radio-option input[type="radio"]:checked+label,
+  .checkbox-option input[type="checkbox"]:checked+label
+  {
+      color: var(--primary-color);
+  }
+
+  .section-title
+  {
+      margin: 30px 0 15px;
+      color: var(--primary-color);
+      font-weight: 700;
+      font-family: Tajawal;
+font-size: 22px;
+
+text-align: right;
+
+  }
+
+  .submit-btn
+  {
+      background-color: #ff7a00;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 5px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+      font-size: 18px;
+  }
+
+  .submit-btn:hover
+  {
+      background-color: #e56e00;
+  }
+
+  .note
+  {
+      text-align: right;
+      margin: 20px 0;
+      line-height: 1.6;
+  }
+
+  .carousel-container
+  {
+      overflow-x: scroll;
+      white-space: nowrap;
+      margin: 20px 0;
+      padding: 10px 0;
+      scroll-behavior: smooth;
+  }
+
+  .dot-indicators
+  {
+      text-align: center;
+      margin: 15px 0;
+  }
+
+  .dot
+  {
+      height: 10px;
+      width: 10px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 5px;
+  }
+
+  .dot.active
+  {
+      background-color: var(--primary-color);
+  }
+
+  .form-container
+  {
+      direction: rtl;
+  }

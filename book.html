@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous" />
+ 
+    <link
+      rel="stylesheet"
+      href="css/rtl.css" />
+    <link
+      rel="stylesheet"
+      href="css/book.css" />
+    <link
+      rel="icon"
+      href="imgs/Artboard 1 copy.svg"
+      type="image/x-icon" />
+    <title>المخترعون - احجز الآن</title>
+  </head>
+  <body>
+   
+    <div class="form-container">
+      <div class="form-header">
+        <img
+          src="imgs/logo.webp"
+          alt="المخترعون" />
+        <h2>ابدأ رحلة طفلك التعليمية اليوم</h2>
+        <p
+          >املأ النموذج التالي، وفريقنا سيتواصل معك لتأكيد الحجز وتفاصيل
+          البدء</p
+        >
+      </div>
+
+      <form id="registrationForm">
+        <div class="form-group">
+          <h3 class="section-title">اسم الطفل</h3>
+          <input
+            type="text"
+            class="form-control"
+            required />
+        </div>
+
+        <div class="form-group">
+          <h3 class="section-title">رقم الهاتف</h3>
+          <input
+            type="tel"
+            class="form-control"
+            required />
+        </div>
+
+        <div class="form-group">
+          <h3 class="section-title">منطقة السكن</h3>
+          <input
+            type="text"
+            class="form-control"
+            required />
+        </div>
+
+        <div class="form-group">
+          <h3 class="section-title">عمر الطفل</h3>
+          <select
+            class="form-control"
+            required>
+            <option
+              value=""
+              disabled
+              selected
+              >اختر العمر</option
+            >
+            <option value="6-8">6-8 سنوات</option>
+            <option value="9-11">9-11 سنة</option>
+            <option value="12-14">12-14 سنة</option>
+            <option value="15-17">15-17 سنة</option>
+          </select>
+        </div>
+        
+        <div class="appointment-section">
+          <h3 class="section-title">طريقة الحضور</h3>
+
+        <div class="form-group">
+          <div class="radio-group">
+            <div class="radio-option">
+              <input
+                type="radio"
+                id="online"
+                name="attendance"
+                value="online" />
+              <label for="online"
+                >Offline (عن طريق الحضور فى مقر الأكاديمة)</label
+              >
+            </div>
+            <div class="radio-option">
+              <input
+                type="radio"
+                id="inperson"
+                name="attendance"
+                value="inperson" />
+              <label for="inperson">Online (عن طريق الأنترنت)</label>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="note">
+          <p
+            >الحضور يكون مرة اسبوعيا في موعد ثابت , لراحة حضراتكم برجاء اختيار 3
+            مواعيد مناسبة حتي نسطيتع اختيار موعد يناسب حضراتكم </p
+          >
+        </div>
+
+<!-- الميعاد الأول -->
+<div class="appointment-section">
+  <h3 class="section-title">الميعاد الأول</h3>
+
+  <!-- اختيار اليوم -->
+  <div class="form-group">
+    <div class="radio-group">
+      <div class="radio-option">
+        <input type="radio" id="day1_1" name="day1" value="sunday" />
+        <label for="day1_1">الأحد</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day1_2" name="day1" value="monday" />
+        <label for="day1_2">الاثنين</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day1_3" name="day1" value="tuesday" />
+        <label for="day1_3">الثلاثاء</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day1_4" name="day1" value="wednesday" />
+        <label for="day1_4">الأربعاء</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day1_5" name="day1" value="thursday" />
+        <label for="day1_5">الخميس</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day1_6" name="day1" value="friday" />
+        <label for="day1_6">الجمعة</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day1_7" name="day1" value="saturday" />
+        <label for="day1_7">السبت</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- اختيار التوقيت -->
+  <h3 class="section-title">الوقت المناسب للميعاد الأول</h3>
+
+  <div class="form-group">
+    <div class="radio-group">
+      <div class="radio-option">
+        <input type="radio" id="time1_1" name="time1" value="10am" />
+        <label for="time1_1">10 صباحًا</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time1_2" name="time1" value="12pm" />
+        <label for="time1_2">12 ظهرًا</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time1_3" name="time1" value="2pm" />
+        <label for="time1_3">2 عصرًا</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time1_4" name="time1" value="4pm" />
+        <label for="time1_4">4 عصرًا</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time1_5" name="time1" value="6pm" />
+        <label for="time1_5">6 مساءً</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time1_6" name="time1" value="8pm" />
+        <label for="time1_6">8 مساءً</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- الميعاد الثاني -->
+<div class="appointment-section">
+  <h3 class="section-title">الميعاد الثاني</h3>
+  
+  <!-- اختيار اليوم -->
+  <div class="form-group">
+    <div class="radio-group">
+      <div class="radio-option">
+        <input type="radio" id="day2_1" name="day2" value="sunday" />
+        <label for="day2_1">الأحد</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day2_2" name="day2" value="monday" />
+        <label for="day2_2">الاثنين</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day2_3" name="day2" value="tuesday" />
+        <label for="day2_3">الثلاثاء</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day2_4" name="day2" value="wednesday" />
+        <label for="day2_4">الأربعاء</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day2_5" name="day2" value="thursday" />
+        <label for="day2_5">الخميس</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day2_6" name="day2" value="friday" />
+        <label for="day2_6">الجمعة</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day2_7" name="day2" value="saturday" />
+        <label for="day2_7">السبت</label>
+      </div>
+    </div>
+  </div>
+  <h3 class="section-title">الوقت المناسب للميعاد التانى</h3>
+
+  <!-- اختيار التوقيت -->
+  <div class="form-group">
+    <div class="radio-group">
+      <div class="radio-option">
+        <input type="radio" id="time2_1" name="time2" value="10am" />
+        <label for="time2_1">10 صباحًا</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time2_2" name="time2" value="12pm" />
+        <label for="time2_2">12 ظهرًا</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time2_3" name="time2" value="2pm" />
+        <label for="time2_3">2 عصرًا</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time2_4" name="time2" value="4pm" />
+        <label for="time2_4">4 عصرًا</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time2_5" name="time2" value="6pm" />
+        <label for="time2_5">6 مساءً</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time2_6" name="time2" value="8pm" />
+        <label for="time2_6">8 مساءً</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- الميعاد الثالث -->
+<div class="appointment-section">
+  <h3 class="section-title">الميعاد الثالث</h3>
+  
+  <!-- اختيار اليوم -->
+  <div class="form-group">
+    <div class="radio-group">
+      <div class="radio-option">
+        <input type="radio" id="day3_1" name="day3" value="sunday" />
+        <label for="day3_1">الأحد</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day3_2" name="day3" value="monday" />
+        <label for="day3_2">الاثنين</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day3_3" name="day3" value="tuesday" />
+        <label for="day3_3">الثلاثاء</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day3_4" name="day3" value="wednesday" />
+        <label for="day3_4">الأربعاء</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day3_5" name="day3" value="thursday" />
+        <label for="day3_5">الخميس</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day3_6" name="day3" value="friday" />
+        <label for="day3_6">الجمعة</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day3_7" name="day3" value="saturday" />
+        <label for="day3_7">السبت</label>
+      </div>
+    </div>
+  </div>
+  <h3 class="section-title">الوقت المناسب للميعاد التالت</h3>
+
+  <!-- اختيار التوقيت -->
+  <div class="form-group">
+    <div class="radio-group">
+      <div class="radio-option">
+        <input type="radio" id="time3_1" name="time3" value="10am" />
+        <label for="time3_1">10 صباحًا</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time3_2" name="time3" value="12pm" />
+        <label for="time3_2">12 ظهرًا</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time3_3" name="time3" value="2pm" />
+        <label for="time3_3">2 عصرًا</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time3_4" name="time3" value="4pm" />
+        <label for="time3_4">4 عصرًا</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time3_5" name="time3" value="6pm" />
+        <label for="time3_5">6 مساءً</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time3_6" name="time3" value="8pm" />
+        <label for="time3_6">8 مساءً</label>
+      </div>
+    </div>
+  </div>
+</div>    
+        <button
+          type="submit"
+          class="submit-btn"
+          >تأكيد</button
+        >
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-LMuzWE3GqzXZ+c+eXc9CJtnNpVRLDFj8JXpz+fA+d7D1ZpLC/qZZQUdVDCWiTkP"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
