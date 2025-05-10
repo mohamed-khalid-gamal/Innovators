@@ -736,7 +736,7 @@
              <span class="contact-icon"><i class="fas fa-phone"></i></span>
            </div>
            <div class="contact-item">
-             <a href="tel:+201027112418">Alexandria Branch -  +201027112418</a>
+             <a href="tel:+201027112418">Alexandria Branch -  +201027112418</a>
              <span class="contact-icon"><i class="fas fa-phone"></i></span>
            </div>
            <div class="contact-item">
@@ -762,33 +762,38 @@
  
          <div class="contact-form">
            <h5 class="contact-title" data-translate="contact_form_title">سجل اهتمامك وابدأ رحلة طفلك</h5>
-           <form>
+           <form id="contactForm">
              <div class="mb-3">
                <input
                  type="text"
                  class="form-control"
+                 id="name"
                  data-translate-placeholder="form_name_ph"
-                 placeholder="الاسم" />
+                 placeholder="الاسم"
+                 required />
              </div>
              <div class="mb-3">
                <input
                  type="email"
                  class="form-control"
+                 id="email"
                  data-translate-placeholder="form_email_ph"
-                 placeholder="البريد الإلكتروني" />
+                 placeholder="البريد الإلكتروني"
+                 required />
              </div>
              <div class="mb-3">
                <textarea
                  class="form-control"
+                 id="message"
                  rows="4"
                  data-translate-placeholder="form_message_ph"
-                 placeholder="اكتب رسالتك"></textarea>
+                 placeholder="اكتب رسالتك"
+                 required></textarea>
              </div>
              <button
                type="submit"
                class="btn btn-submit"
-               data-translate="form_submit_btn">أرسل رسالتك</button
-             >
+               data-translate="form_submit_btn">أرسل رسالتك</button>
            </form>
          </div>
        </div>
@@ -913,6 +918,37 @@
             langButton.setAttribute('data-language', 'ar');
         }
     });
+    </script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            try {
+                const response = await fetch('http://mokhtareon.runasp.net/api/messages', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('تم إرسال رسالتك بنجاح!');
+                    this.reset(); // Clear the form
+                } else {
+                    alert('حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى.');
+            }
+        });
     </script>
   </body>
 </html>

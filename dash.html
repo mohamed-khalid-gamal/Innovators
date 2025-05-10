@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - المخترعون</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .dashboard-container {
+            padding: 20px;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #1364A2;
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 15px 20px;
+        }
+        .message-item, .booking-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s;
+        }
+        .message-item:hover, .booking-item:hover {
+            background-color: #f8f9fa;
+        }
+        .message-item:last-child, .booking-item:last-child {
+            border-bottom: none;
+        }
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        .status-pending {
+            background-color: #ffeeba;
+            color: #856404;
+        }
+        .status-confirmed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status-cancelled {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .nav-tabs {
+            border-bottom: none;
+            margin-bottom: 20px;
+        }
+        .nav-tabs .nav-link {
+            border: none;
+            color: #6c757d;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin: 0 5px;
+        }
+        .nav-tabs .nav-link.active {
+            background-color: #1364A2;
+            color: white;
+        }
+        .search-box {
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            border-radius: 20px;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1 class="mb-4">Dashboard</h1>
+        
+        
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="messages-tab" data-bs-toggle="tab" href="#messages" role="tab">الرسائل</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="bookings-tab" data-bs-toggle="tab" href="#bookings" role="tab">الحجوزات</a>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="dashboardTabsContent">
+            <!-- Messages Tab -->
+            <div class="tab-pane fade show active" id="messages" role="tabpanel">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">الرسائل</h5>
+                        <span class="badge bg-light text-dark">5 رسائل جديدة</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="message-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">أحمد محمد</h6>
+                                    <p class="mb-1 text-muted">استفسار عن كورس البرمجة</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">سارة أحمد</h6>
+                                    <p class="mb-1 text-muted">طلب معلومات عن الأسعار</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bookings Tab -->
+            <div class="tab-pane fade" id="bookings" role="tabpanel">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">الحجوزات</h5>
+                        <span class="badge bg-light text-dark">3 حجوزات جديدة</span>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="booking-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">محمد علي</h6>
+                                    <p class="mb-1">كورس الروبوتات والذكاء الاصطناعي</p>
+                                    <p class="mb-0 text-muted">الأحد - 10 صباحاً</p>
+                                </div>
+                                <span class="status-badge status-pending">قيد الانتظار</span>
+                            </div>
+                        </div>
+                        <div class="booking-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">فاطمة محمود</h6>
+                                    <p class="mb-1">كورس تصميم المواقع</p>
+                                    <p class="mb-0 text-muted">الثلاثاء - 2 عصراً</p>
+                                </div>
+                                <span class="status-badge status-confirmed">مؤكد</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Function to fetch messages from API
+        async function fetchMessages() {
+            try {
+                const response = await fetch('http://mokhtareon.runasp.net/api/messages');
+                const messages = await response.json();
+                updateMessagesUI(messages);
+            } catch (error) {
+                console.error('Error fetching messages:', error);
+            }
+        }
+
+        // Function to update the messages UI
+        function updateMessagesUI(messages) {
+            const messagesContainer = document.querySelector('#messages .card-body');
+            messagesContainer.innerHTML = ''; // Clear existing messages
+
+            messages.forEach(message => {
+                const messageElement = `
+                    <div class="message-item">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1">${message.name}</h6>
+                                <p class="mb-1 text-muted">${message.message}</p>
+                                <small class="text-muted">${message.email}</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                messagesContainer.innerHTML += messageElement;
+            });
+
+            // Update the badge count
+            const badgeElement = document.querySelector('#messages .badge');
+            badgeElement.textContent = `${messages.length} رسائل جديدة`;
+        }
+
+        // Fetch messages when the page loads
+        document.addEventListener('DOMContentLoaded', fetchMessages);
+    </script>
+</body>
+</html>
