@@ -640,6 +640,8 @@ body.sidebar-active::before
     {
         height: 50px;
         margin-right: 10px;
+        filter: brightness(0.9);
+
     }
 
     header nav
@@ -695,6 +697,7 @@ body.sidebar-active::before
     header img
     {
         height: 40px;
+        filter: brightness(0.9);
     }
 
     .i_btn
