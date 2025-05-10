@@ -1,0 +1,161 @@
+/* Language selector styling */
+.fa-solid.fa-language {
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  padding: 8px;
+}
+
+.fa-solid.fa-language:hover {
+  transform: scale(1.2);
+  color: #007bff;
+}
+
+/* Language transition effects */
+[data-language="ar"] .fa-language {
+  transform: scaleX(-1); /* Flip the language icon for Arabic */
+}
+
+/* Direction transition */
+html[dir="rtl"] .fa-language,
+html[dir="ltr"] .fa-language {
+  transition: all 0.3s ease;
+}
+
+/* Add animation for language switching */
+.lang-transition {
+  animation: fadeEffect 0.5s;
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0.5;}
+  to {opacity: 1;}
+}
+
+/* Responsive courses section for both RTL and LTR */
+@media (max-width: 768px) {
+  html[dir="rtl"] .courses-section .course-card,
+  html[dir="ltr"] .courses-section .course-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  html[dir="rtl"] .courses-section .course-card .course-info,
+  html[dir="ltr"] .courses-section .course-card .course-info {
+    margin: 15px 0 0 0;
+    text-align: center;
+  }
+  
+  html[dir="rtl"] .courses-section .course-card .course-image,
+  html[dir="ltr"] .courses-section .course-card .course-image {
+    margin: 0;
+  }
+}
+
+/* SVG animation effects with direction awareness */
+.svg-animation-rtl {
+  animation: floatRTL 3s ease-in-out infinite;
+}
+
+.svg-animation-ltr {
+  animation: floatLTR 3s ease-in-out infinite;
+}
+
+@keyframes floatRTL {
+  0% { transform: translateX(0) scaleX(-1); }
+  50% { transform: translateX(-10px) scaleX(-1); }
+  100% { transform: translateX(0) scaleX(-1); }
+}
+
+@keyframes floatLTR {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+/* Direction-aware SVG containers */
+html[dir="rtl"] .svg-container {
+  transform: scaleX(-1);
+}
+
+html[dir="ltr"] .svg-container {
+  transform: none;
+}
+
+/* Direction-aware course navigation */
+html[dir="rtl"] .course-navigation .prev-icon {
+  transform: rotate(180deg);
+}
+
+html[dir="rtl"] .course-navigation .next-icon {
+  transform: rotate(180deg);
+}
+
+/* Common styling for both directions with appropriate switching */
+html[dir="rtl"] {
+  font-family: 'Tajawal', sans-serif;
+}
+
+html[dir="ltr"] {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Fix border radius for all elements when switching directions */
+html[dir="rtl"] .border-radius-left {
+  border-radius: 0 10px 10px 0;
+}
+
+html[dir="rtl"] .border-radius-right {
+  border-radius: 10px 0 0 10px;
+}
+
+html[dir="ltr"] .border-radius-left {
+  border-radius: 10px 0 0 10px;
+}
+
+html[dir="ltr"] .border-radius-right {
+  border-radius: 0 10px 10px 0;
+}
+
+/* Shadow direction adjustments */
+html[dir="rtl"] .shadow-right {
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+html[dir="rtl"] .shadow-left {
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+html[dir="ltr"] .shadow-right {
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+html[dir="ltr"] .shadow-left {
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Background position adjustments */
+html[dir="rtl"] .bg-position-right {
+  background-position: left center;
+}
+
+html[dir="rtl"] .bg-position-left {
+  background-position: right center;
+}
+
+html[dir="ltr"] .bg-position-right {
+  background-position: right center;
+}
+
+html[dir="ltr"] .bg-position-left {
+  background-position: left center;
+}
+
+/* Direction-aware transitions */
+.rtl-ltr-transition {
+  transition: all 0.5s ease;
+}
+
+/* Fix text alignment during transition */
+.text-alignment-fix {
+  transition: text-align 0s ease 0.3s;
+}

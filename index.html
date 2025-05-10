@@ -10,78 +10,76 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="imgs/Artboard 1 copy.svg" type="image/x-icon" />
-    <title>المخترعون</title>
+    <script src="js/translate.js"></script>
+    <title data-translate="title">المخترعون</title>
   </head>
   <body>
     <main style="direction: rtl;">
       <header>
         <img src="imgs/image 34.svg" alt="img">
-        <!-- Hamburger menu button for mobile -->
         <button class="hamburger" id="openSidebar" aria-label="Open menu">
           <i class="fa fa-bars"></i>
         </button>
       
-        <!-- CORRECTED: desktop-nav contains the UL -->
         <nav class="desktop-nav">
           <ul>
-            <li><a href="#courses">كورساتنا</a></li>
-            <li><a href="#why">لماذا مخترعون</a></li>
-            <li><a href="#projects">إنجازاتنا</a></li>
-            <li><a href="#pricing">الأسعار</a></li>
-            <li><a href="#contact">الأسئلة الشائعة</a></li>
+            <li><a href="#courses" data-translate="nav_courses">كورساتنا</a></li>
+            <li><a href="#why" data-translate="nav_why">لماذا مخترعون</a></li>
+            <li><a href="#projects" data-translate="nav_projects">إنجازاتنا</a></li>
+            <li><a href="#pricing" data-translate="nav_pricing">الأسعار</a></li>
+            <li><a href="#contact" data-translate="nav_faq">الأسئلة الشائعة</a></li>
           </ul>
         </nav>
-      
+              
         <div class="i_btn">
-          <button><a href="book.html">احجز الان</a></button>
-          <i class="fa-solid fa-language"></i>
+          <button><a href="book.html" data-translate="book_now">احجز الان</a></button>
+          <i class="fa-solid fa-language" data-language="ar" title="Change Language" style="cursor: pointer; font-size: 1.5rem; padding: 8px; color: #007bff;" onclick="translatePage(this.getAttribute('data-language') === 'ar' ? 'en' : 'ar'); this.setAttribute('data-language', this.getAttribute('data-language') === 'ar' ? 'en' : 'ar');"></i>
         </div>
       </header>
       
       
       <aside id="sidebar" class="sidebar">
-        <button class="close-sidebar" id="closeSidebar" aria-label="Close menu">&times;</button>
+        <button class="close-sidebar" id="closeSidebar" aria-label="Close menu">×</button>
         <ul>
-          <li><a href="#courses">كورساتنا</a></li>
-          <li><a href="#why">لماذا مخترعون</a></li>
-          <li><a href="#projects">إنجازاتنا</a></li>
-          <li><a href="#pricing">الأسعار</a></li>
-          <li><a href="#contact">الأسئلة الشائعة</a></li>
+          <li><a href="#courses" data-translate="nav_courses">كورساتنا</a></li>
+          <li><a href="#why" data-translate="nav_why">لماذا مخترعون</a></li>
+          <li><a href="#projects" data-translate="nav_projects">إنجازاتنا</a></li>
+          <li><a href="#pricing" data-translate="nav_pricing">الأسعار</a></li>
+          <li><a href="#contact" data-translate="nav_faq">الأسئلة الشائعة</a></li>
         </ul>
-        <button class="sidebar-btn"><a href="book.html">احجز الان</a></button>
+        <button class="sidebar-btn"><a href="book.html" data-translate="book_now">احجز الان</a></button>
       </aside>
+      
+      <script src="translate.js"></script>
     <div class="sec1">
         <div class="right">
-            <h1>رحلة <span>الإكتشاف
+            <h1><span data-translate="hero_title_1">رحلة</span> <span><span data-translate="hero_title_2">الإكتشاف</span>
                 <div class="div">
                 <p>Mokhtarreon</p>
             </div>  
-        </span><br>تبدأ من هنا</h1>
+        </span><br><span data-translate="hero_title_3">تبدأ من هنا</span></h1>
             
             <ul>
-                <li>برامج تعليمية مصممة <span>للأطفال</span> لصقل مهاراتهم</li>
-                <li>نمزج بين التعلم و المتعة من خلال <span>مشاريع عملية</span> تنمي التفكير و الإبداع</li>
-                <li>معنا, لا يتعلم الطفل فحسب, بل <span>يصنع شيئا</span> يعبر به عن ذاته</li>
+                <li data-translate="list_item_1">برامج تعليمية مصممة للأطفال لصقل مهاراتهم</li>
+                <li data-translate="list_item_2">نمزج بين التعلم و المتعة من خلال مشاريع عملية تنمي التفكير و الإبداع</li>
+                <li data-translate="list_item_3">معنا, لا يتعلم الطفل فحسب, بل يصنع شيئا يعبر به عن ذاته</li>
             </ul>
             <div class="btns">
-                <button class="btn1"><a href="#">تواصل معنا</a></button>
-                <button class="btn2"><a href="https://eg-learn.vercel.app">اكتشف منصة التعلم الإلكتروني</a></button>
+                <button class="btn1"><a href="#" data-translate="contact_us">تواصل معنا</a></button>
+                <button class="btn2"><a href="https://eg-learn.vercel.app" data-translate="discover_platform">اكتشف منصة التعلم الإلكتروني</a></button>
             </div>
         </div>
         <div class="left">
             <img src="imgs/hero photo.webp" alt="photo" class="down">
-            <!-- img ------------------------------------------------->
-        </div>
+            </div>
     </div>
-    <!-- <img src="img/Vector.webp" alt="photo" class="image"> -->
-</main>
+    </main>
     <section id="courses">
       <div
         class="title d-flex flex-column justify-content-center align-items-center">
-        <h3> كورساتنا</h3>
-        <p></p>
-          مجموعة من البرامج التعليمية الممتعة التي تنمي مهارات طفلك وتفتح له
-          أبواب المستقبل
+        <h3 data-translate="courses_title">كورساتنا</h3>
+        <p data-translate="courses_desc">
+          مجموعة من البرامج التعليمية الممتعة التي تنمي مهارات طفلك وتفتح له أبواب المستقبل
         </p>
       </div>
       <div class="cards">
@@ -92,11 +90,11 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title"><span>١</span> الروبوتات والذكاء الاصطناعي</h5>
-                <p class="card-text">يتعلم الطفل تجميع روبوتات تعليمية بأجزاء مختلفة واستخدام أدوات برمجة بسيطة</p>
-                <p class="card-text">يستخدم خوارزميات الذكاء الاصطناعي مثل التعلم الآلي واتخاذ القرارات</p>
-                <p class="card-text">نظريات مبسطة وسهلة الفهم</p>
-                <p class="card-text">يخوض مجالات التفكير المنطقي والتحليل العملي من خلال المشاريع العملية خطوة خطوة والاستكشاف</p>
+                <h5 class="card-title"><span class="number-style">١</span> <span data-translate="course1_title">الروبوتات والذكاء الاصطناعي</span></h5>
+                <p class="card-text" data-translate="course1_desc1">يتعلم الأطفال تجميع الروبوتات التعليمية بأجزاء مختلفة واستخدام أدوات برمجة بسيطة</p>
+                <p class="card-text" data-translate="course1_desc2">يستخدم خوارزميات الذكاء الاصطناعي مثل التعلم الآلي واتخاذ القرارات</p>
+                <p class="card-text" data-translate="course1_desc3">نظريات مبسطة وسهلة الفهم</p>
+                <p class="card-text" data-translate="course1_desc4">ينخرط في التفكير المنطقي والتحليل العملي من خلال مشاريع عملية خطوة بخطوة واستكشاف</p>
               </div>
             </div>
           </div>
@@ -106,7 +104,6 @@
 
         </div>
         
-        <!-- Card 2 -->
         <div class="card">
           <div class="row g-0">
             <div class="col-md-4">
@@ -114,11 +111,11 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title"><span>٢</span> تصميم وتطوير المواقع الإلكترونية</h5>
-                <p class="card-text">يتعلم الطفل كيفية إنشاء مواقع الكترونية مع مختلف الاستخدامات</p>
-                <p class="card-text">برمجة بسيطة على HTML وCSS وغيرها</p>
-                <p class="card-text">يكتسب عمليا بنية مواقع الويب وكيفية تصميمها بشكل فعال وجذاب</p>
-                <p class="card-text">يتم ممارسة في المشاريع العملية وتطبيق المحتوى من خلال التطبيقات والمشاريع الفعلية</p>
+                <h5 class="card-title"><span class="number-style">٢</span> <span data-translate="course2_title">تصميم وتطوير المواقع الإلكترونية</span></h5>
+                <p class="card-text" data-translate="course2_desc1">يتعلم الأطفال كيفية إنشاء مواقع ويب ذات استخدامات مختلفة</p>
+                <p class="card-text" data-translate="course2_desc2">برمجة بسيطة في HTML، CSS، والمزيد</p>
+                <p class="card-text" data-translate="course2_desc3">يكتسب عملياً هيكل الموقع وكيفية تصميمها بفعالية وجاذبية</p>
+                <p class="card-text" data-translate="course2_desc4">يمارس مشاريع عملية ويطبق المحتوى من خلال تطبيقات ومشاريع فعلية</p>
               </div>
             </div>
           </div>
@@ -128,7 +125,6 @@
 
         </div>
         
-        <!-- Card 3 -->
         <div class="card">
           <div class="row g-0">
             <div class="col-md-4">
@@ -136,10 +132,10 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title"><span>٣</span> تصميم الجرافيك</h5>
-                <p class="card-text">يكتشف الطفل الأساسيات للتصميم الفني عبر برامج الجرافيك والفنون الرقمية</p>
-                <p class="card-text">يستخدم أدوات تصميم احترافية مبسطة للمبتدئين لإنتاج صور ورسومات جذابة</p>
-                <p class="card-text">يتعلم تقنيات الألوان والتأثير على الصور ويطور مهارات التعبير عن الأفكار بطريقة احترافية وفنية</p>
+                <h5 class="card-title"><span class="number-style">٣</span> <span data-translate="course3_title">تصميم الجرافيك</span></h5>
+                <p class="card-text" data-translate="course3_desc1">يكتشف الأطفال أساسيات التصميم الفني من خلال برامج الجرافيك والفنون الرقمية</p>
+                <p class="card-text" data-translate="course3_desc2">يستخدم أدوات تصميم احترافية مبسطة للمبتدئين لإنتاج صور ورسومات جذابة</p>
+                <p class="card-text" data-translate="course3_desc3">يتعلم تقنيات الألوان وتأثيرات الصور ويطور مهارات للتعبير عن الأفكار باحترافية وفنية</p>
               </div>
             </div>
           </div>
@@ -149,7 +145,6 @@
 
         </div>
         
-        <!-- Card 4 -->
         <div class="card ">
           <div class="row g-0">
             <div class="col-md-4">
@@ -157,10 +152,10 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title"><span>٤</span> برمجة تطبيقات الهاتف</h5>
-                <p class="card-text">يتعلم الطفل كيف يبني تطبيقات بسيطة باستخدام أدوات للمبتدئين المناسبة لسنهم</p>
-                <p class="card-text">يتعرف على مكونات التطبيق ويتفاعل مع وظائف التطبيق بشكل عملي وتفاعلي</p>
-                <p class="card-text">يطور فكرة الحلول من المشكلة إلى المنتج مما يعزز مهاراته التكنولوجية والابتكارية</p>
+                <h5 class="card-title"><span class="number-style">٤</span> <span data-translate="course4_title">برمجة تطبيقات الهاتف</span></h5>
+                <p class="card-text" data-translate="course4_desc1">يتعلم الأطفال كيفية بناء تطبيقات بسيطة باستخدام أدوات سهلة الاستخدام ومناسبة لأعمارهم</p>
+                <p class="card-text" data-translate="course4_desc2">يحدد مكونات التطبيق ويتفاعل مع وظائف التطبيق بطريقة عملية وتفاعلية</p>
+                <p class="card-text" data-translate="course4_desc3">يطور فكرة الحلول من المشكلة إلى المنتج، مما يعزز مهاراتهم التكنولوجية والابتكارية</p>
               </div>
             </div>
           </div>
@@ -170,7 +165,6 @@
 
         </div>
         
-        <!-- Card 5 -->
         <div class="card">
           <div class="row g-0">
             <div class="col-md-4">
@@ -178,10 +172,10 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title"><span>٥</span> بايثون (Python)</h5>
-                <p class="card-text">يتعرف الطفل على لغة بايثون بشكل مبسط والأوامر وهي من أشهر لغات البرمجة عالميا</p>
-                <p class="card-text">يطبق ما يتعلمه في مشاريع برمجية منظمة لتبني مهارات التفكير</p>
-                <p class="card-text">يؤسس قاعدة قوية في البرمجة لتعلم لغات وأدوات أكثر تقدما مستقبلا</p>
+                <h5 class="card-title"><span class="number-style">٥</span> <span data-translate="course5_title">بايثون (Python)</span></h5>
+                <p class="card-text" data-translate="course5_desc1">يتعلم الأطفال بايثون ببساطة وأوامرها، حيث إنها من أشهر لغات البرمجة عالميا</p>
+                <p class="card-text" data-translate="course5_desc2">يطبق ما يتعلمه في مشاريع برمجية منظمة لبناء مهارات التفكير</p>
+                <p class="card-text" data-translate="course5_desc3">يؤسس أساسا قويا في البرمجة لتعلم لغات وأدوات أكثر تقدما في المستقبل</p>
               </div>
             </div>
           </div>
@@ -192,8 +186,8 @@
     </section>
    <section id="why">
     <div class="header-title">
-    <h3>لماذا تختار "مخترعون" لأطفالك؟</h3>
-    <p>لأننا لا نعلم فقط… بل نطلق طاقات الأطفال ليفكروا، ويبتكروا، ويصنعوا مستقبلهم بأيديهم</p>
+    <h3 data-translate="why_title">لماذا تختار "مخترعون" لأطفالك؟</h3>
+    <p data-translate="why_desc">لأننا لا نعلم فقط… بل نطلق طاقات الأطفال ليفكروا، ويبتكروا، ويصنعوا مستقبلهم بأيديهم</p>
     </div>
     <div class="content">
         <div class="text">
@@ -204,8 +198,8 @@
                   <path d="M18.1423 26.8001L18.1523 31.5501C18.1523 31.5501 19.8148 33.7501 23.6448 33.7501C27.4748 33.7501 29.1448 31.5501 29.1448 31.5501V26.8001M13.5723 32.4876V24.8101" stroke="#1364A2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>  </span>
                                 
-                  تعلم عملي من أول يوم</li>
-                <p> نساعد الطفل ان ينفذ مشروعا حقيقيا بيده، لا يقتصر على المشاهدة فقط.</p>
+                  <span data-translate="why_item1_title">التعلم العملي من اليوم الأول</span></li>
+                <p data-translate="why_item1_desc">نساعد الطفل على إنجاز مشروع حقيقي بيديه، و ليس مجرد الملاحظة.</p>
                 <li><span class="icon-wrapper">
                   <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16.8821 12.0934C16.4542 12.0934 16.0913 11.946 15.7933 11.6514C15.4933 11.3567 15.3432 10.996 15.3432 10.5691C15.3432 10.1423 15.4911 9.77937 15.7868 9.48037C16.0826 9.18137 16.4433 9.03187 16.8691 9.03187C17.2948 9.03187 17.6578 9.1792 17.9578 9.47387C18.2579 9.76854 18.4074 10.1293 18.4063 10.5561C18.4053 10.983 18.2579 11.3459 17.9643 11.6449C17.6708 11.9439 17.31 12.0934 16.8821 12.0934ZM9.13087 12.0934C8.70404 12.0934 8.34112 11.946 8.04212 11.6514C7.74312 11.3567 7.59362 10.996 7.59362 10.5691C7.59362 10.1423 7.74096 9.77937 8.03562 9.48037C8.33029 9.18137 8.69158 9.03187 9.11949 9.03187C9.54741 9.03187 9.91032 9.1792 10.2082 9.47387C10.5062 9.76854 10.6557 10.1293 10.6567 10.5561C10.6578 10.983 10.5105 11.3459 10.2147 11.6449C9.91899 11.9439 9.5577 12.0934 9.13087 12.0934ZM13 19.8755C11.6881 19.8755 10.4845 19.5483 9.38924 18.894C8.294 18.2397 7.41433 17.3584 6.75025 16.2501H19.2497C18.5856 17.3584 17.706 18.2397 16.6107 18.894C15.5166 19.5483 14.313 19.8755 13 19.8755ZM13.0016 26.0001C11.1989 26.0001 9.50895 25.661 7.93162 24.9829C6.35429 24.3047 4.97792 23.3763 3.80251 22.1976C2.6271 21.019 1.69868 19.6431 1.01727 18.0701C0.335855 16.4971 -0.00322685 14.8071 2.31408e-05 13.0001C0.00327313 11.1931 0.342355 9.50312 1.01727 7.93012C1.69218 6.35712 2.6206 4.98129 3.80251 3.80262C4.98442 2.62396 6.36025 1.69554 7.93 1.01737C9.49974 0.339205 11.1897 0.00012207 13 0.00012207C14.8102 0.00012207 16.5002 0.339205 18.07 1.01737C19.6397 1.69554 21.0155 2.62396 22.1975 3.80262C23.3794 4.98129 24.3072 6.35712 24.9811 7.93012C25.6549 9.50312 25.9945 11.1931 25.9999 13.0001C26.0054 14.8071 25.6663 16.4971 24.9827 18.0701C24.2991 19.6431 23.3707 21.02 22.1975 22.2009C21.0242 23.3817 19.6484 24.3096 18.07 24.9845C16.4916 25.6594 14.8016 25.998 13 26.0001M13 24.3751C16.1416 24.3751 18.8229 23.2647 21.0437 21.0439C23.2645 18.823 24.3749 16.1418 24.3749 13.0001C24.3749 9.85846 23.2645 7.17721 21.0437 4.95637C18.8229 2.73554 16.1416 1.62512 13 1.62512C12.7053 1.62512 12.4112 1.63596 12.1176 1.65762C11.8229 1.67821 11.5424 1.71558 11.2759 1.76975C11.1968 1.97341 11.1507 2.14946 11.1377 2.29787C11.1247 2.44521 11.1182 2.62721 11.1182 2.84387C11.1182 3.53721 11.3669 4.1325 11.8641 4.62975C12.3614 5.127 12.9599 5.37562 13.6597 5.37562C13.9598 5.37562 14.1954 5.335 14.3666 5.25375C14.5388 5.1725 14.7333 5.13187 14.95 5.13187C15.132 5.13187 15.2836 5.20391 15.405 5.348C15.5263 5.49208 15.587 5.66108 15.587 5.855C15.587 6.22441 15.3795 6.47629 14.9646 6.61062C14.5486 6.74496 14.1104 6.81212 13.65 6.81212C12.5558 6.81212 11.6209 6.42429 10.8452 5.64862C10.0696 4.87296 9.68174 3.93804 9.68174 2.84387V2.51237C9.68174 2.41379 9.70557 2.28271 9.75324 2.11912C7.40133 2.80704 5.45892 4.13846 3.92601 6.11337C2.3931 8.08829 1.6261 10.3839 1.62502 13.0001C1.62502 16.1418 2.73543 18.823 4.95626 21.0439C7.17708 23.2647 9.85832 24.3751 13 24.3751Z" fill="#1364A2"/>
@@ -213,28 +207,28 @@
                 </span>
                   
                   
-                  محتوى مناسب لعمر الطفل </li>
-                <p>برامج تعليمية تناسب عمره واهتماماته، بلا تعقيد.</p>
+                  <span data-translate="why_item2_title">محتوى مناسب للعمر</span> </li>
+                <p data-translate="why_item2_desc">برامج تعليمية مصممة خصيصاً لسنه واهتماماته، دون تعقيد.</p>
                 <li><span class="icon-wrapper">  <svg width="27" height="31" viewBox="0 0 27 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M23.8659 16.0483C23.6948 15.8529 23.5145 15.657 23.3249 15.4606C23.4571 15.3206 23.5854 15.1811 23.7099 15.042C26.0505 12.4112 27.0392 9.77163 26.1234 8.18642C25.2455 6.66538 22.6336 6.21183 19.3626 6.84767C19.0408 6.91086 18.7204 6.98183 18.4015 7.06058C18.3403 6.85058 18.2756 6.64156 18.2076 6.4335C17.0978 3.08954 15.3055 0.915168 13.4738 0.916627C11.718 0.916627 10.0205 2.95392 8.93696 6.10538C8.83001 6.41649 8.73133 6.72954 8.64091 7.04454C8.428 6.99204 8.21411 6.94343 7.99925 6.89871C4.54883 6.19142 1.7707 6.65808 0.85633 8.24621C-0.0201283 9.76725 0.895705 12.2566 3.08466 14.7679C3.30244 15.0158 3.52605 15.2588 3.7555 15.497C3.48425 15.7741 3.22904 16.0517 2.98987 16.3298C0.853414 18.806 -0.00991994 21.2531 0.86508 22.7683C1.76925 24.3345 4.508 24.8464 7.84321 24.1902C8.11348 24.1367 8.3823 24.0764 8.64966 24.0093C8.74689 24.3506 8.85432 24.6894 8.97196 25.0258C10.0511 28.1131 11.7384 30.0833 13.4884 30.0833C15.2967 30.0833 17.108 27.9643 18.2061 24.7472C18.2927 24.4935 18.3748 24.2305 18.4526 23.9583C18.7977 24.0438 19.1453 24.1197 19.4953 24.1858C22.708 24.7939 25.2586 24.317 26.1322 22.8004C27.0349 21.2327 26.103 18.6048 23.8659 16.0483ZM1.9355 8.86746C2.49841 7.89038 4.76904 7.50829 7.74841 8.12079C7.93897 8.15968 8.13293 8.20343 8.33029 8.25204C8.0392 9.53884 7.83361 10.8435 7.71487 12.1575C6.64072 12.9133 5.61632 13.7375 4.648 14.625C4.43508 14.4043 4.22751 14.1782 4.02529 13.9468C2.14841 11.7973 1.40758 9.78475 1.9355 8.86746ZM7.60404 17.2208C6.86029 16.6564 6.16758 16.0789 5.53904 15.4985C6.16612 14.921 6.85883 14.3464 7.60258 13.7835C7.57536 14.3561 7.56223 14.9293 7.56321 15.5029C7.56321 16.0765 7.57682 16.6491 7.60404 17.2208ZM7.60404 22.9666C6.34014 23.2494 5.03484 23.2958 3.75404 23.1037C3.40297 23.0759 3.06131 22.9766 2.75007 22.8118C2.43883 22.647 2.1646 22.4203 1.94425 22.1456C1.41196 21.2268 2.10612 19.261 3.93341 17.1435C4.16286 16.8781 4.40008 16.6195 4.64508 16.3677C5.61357 17.2609 6.64004 18.0891 7.71779 18.8468C7.83839 20.1773 8.04592 21.4985 8.33904 22.8018C8.09598 22.8631 7.8505 22.9185 7.60258 22.9681L7.60404 22.9666ZM17.9582 11.2431C17.4692 10.9349 16.9743 10.6369 16.4736 10.3491C15.9797 10.0652 15.4805 9.79156 14.9759 9.52808C15.8057 9.17838 16.6521 8.86933 17.512 8.60204C17.7056 9.47422 17.8545 10.3557 17.9582 11.2431ZM10.1167 6.50933C11.0442 3.81142 12.418 2.1635 13.4767 2.1635C14.604 2.16204 16.0682 3.93975 17.0263 6.82579C17.0886 7.0144 17.1469 7.20399 17.2013 7.39454C15.9436 7.78443 14.713 8.25699 13.5176 8.80913C12.3263 8.24989 11.0985 7.77192 9.84258 7.3785C9.92716 7.08683 10.0186 6.79711 10.1167 6.50933ZM9.53341 8.586C10.3898 8.85474 11.2319 9.16724 12.0563 9.52225C11.0336 10.0492 10.038 10.6233 9.06966 11.2445C9.18633 10.3141 9.34237 9.42308 9.53341 8.586ZM9.07112 19.7568C9.55432 20.067 10.0448 20.365 10.5426 20.6508C11.0501 20.9425 11.5639 21.2225 12.084 21.4908C11.2536 21.8578 10.4047 22.1815 9.54071 22.4606C9.33966 21.5681 9.18294 20.6663 9.07112 19.7583V19.7568ZM17.0278 24.3448C16.6409 25.5805 16.0288 26.734 15.2224 27.747C15.0233 28.0374 14.7668 28.284 14.4689 28.4716C14.171 28.6592 13.8378 28.7838 13.4899 28.8379C12.4267 28.8379 11.072 27.2556 10.1503 24.6145C10.0414 24.3025 9.94126 23.9875 9.84987 23.6695C11.1118 23.263 12.3445 22.7709 13.5395 22.1966C14.7453 22.7525 15.9861 23.2295 17.2538 23.6243C17.1838 23.8664 17.1085 24.1066 17.0278 24.3448ZM17.5557 22.4139C16.6842 22.1424 15.8266 21.828 14.9861 21.4718C15.481 21.2122 15.9792 20.9376 16.4809 20.6479C16.9962 20.3504 17.4979 20.0456 17.9859 19.7335C17.8888 20.6338 17.7452 21.5285 17.5557 22.4139ZM18.2076 15.497C18.2076 16.3827 18.1799 17.2675 18.1245 18.1512C17.404 18.6393 16.6486 19.1118 15.8582 19.5687C15.0707 20.0227 14.2944 20.4388 13.5292 20.817C12.7252 20.432 11.9367 20.0169 11.1638 19.5716C10.3958 19.1293 9.64522 18.6582 8.91216 18.1585C8.84411 17.2738 8.81008 16.3881 8.81008 15.5014C8.81008 14.6157 8.84314 13.7305 8.90925 12.8458C10.3747 11.8441 11.9143 10.9554 13.5147 10.1873C14.308 10.5732 15.0872 10.9869 15.8524 11.4283C16.6204 11.8697 17.3739 12.3359 18.1128 12.8268C18.176 13.7154 18.2076 14.6055 18.2076 15.497ZM19.6017 8.06975C22.4047 7.52579 24.5163 7.89183 25.0457 8.80913C25.6101 9.78621 24.8022 11.9416 22.7795 14.2137C22.6677 14.3391 22.552 14.465 22.4324 14.5914C21.4474 13.7006 20.4028 12.8782 19.3057 12.1298C19.1954 10.8303 18.9981 9.53968 18.7151 8.26663C19.0165 8.19274 19.312 8.12711 19.6017 8.06975ZM19.4122 13.7354C20.1526 14.2753 20.8643 14.8536 21.5442 15.4679C20.8674 16.092 20.1581 16.68 19.4195 17.2295C19.4418 16.652 19.453 16.0745 19.453 15.497C19.453 14.9098 19.4394 14.3226 19.4122 13.7354ZM25.0545 22.1777C24.5236 23.0979 22.4761 23.4814 19.7272 22.9623C19.4122 22.9029 19.0894 22.832 18.7588 22.7493C19.0352 21.4598 19.2237 20.1531 19.3232 18.8381C20.418 18.0766 21.4592 17.241 22.4397 16.337C22.6117 16.515 22.7751 16.6919 22.9297 16.8679C23.8071 17.8203 24.5008 18.9268 24.9757 20.1316C25.1277 20.4493 25.2131 20.7946 25.2266 21.1465C25.2402 21.4984 25.1816 21.8493 25.0545 22.1777ZM12.1934 13.222C11.7473 13.4796 11.3876 13.8637 11.1598 14.3257C10.932 14.7877 10.8463 15.3068 10.9135 15.8175C10.9808 16.3282 11.1979 16.8075 11.5375 17.1948C11.8771 17.5821 12.324 17.86 12.8215 17.9934C13.3191 18.1267 13.845 18.1096 14.3328 17.9441C14.8206 17.7785 15.2483 17.4721 15.562 17.0635C15.8756 16.6549 16.061 16.1624 16.0948 15.6484C16.1286 15.1344 16.0092 14.6219 15.7517 14.1758C15.5808 13.8795 15.3531 13.6198 15.0817 13.4115C14.8103 13.2032 14.5006 13.0504 14.1701 12.9618C13.8397 12.8733 13.4951 12.8507 13.1559 12.8953C12.8167 12.9399 12.4897 13.051 12.1934 13.222Z" fill="#1364A2"/>
                   </svg></span>
                  
                   
-                  تفاعل حي مع المدرسين</li>
-                <p>دروس مباشرة تتيح للطفل المشاركة، السؤال، والإجابة.</p>
+                  <span data-translate="why_item3_title">تفاعل مباشر مع المعلمين</span></li>
+                <p data-translate="why_item3_desc">تتيح الدروس المباشرة للطفل المشاركة و طرح الأسئلة و الإجابة عليها.</p>
                 <li> <span class="icon-wrapper"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M22.6248 8.1875C22.6248 8.5356 22.7631 8.86944 23.0092 9.11558C23.2554 9.36172 23.5892 9.5 23.9373 9.5C24.2854 9.5 24.6193 9.36172 24.8654 9.11558C25.1115 8.86944 25.2498 8.5356 25.2498 8.1875V0.75H17.8123C17.4642 0.75 17.1304 0.888281 16.8842 1.13442C16.6381 1.38056 16.4998 1.7144 16.4998 2.0625C16.4998 2.4106 16.6381 2.74444 16.8842 2.99058C17.1304 3.23672 17.4642 3.375 17.8123 3.375H20.7698L12.8948 11.25H7.31232C6.96434 11.2503 6.63073 11.3888 6.38482 11.635L1.13482 16.885C0.951499 17.0686 0.826681 17.3023 0.776133 17.5568C0.725586 17.8112 0.751576 18.0749 0.850821 18.3146C0.950065 18.5543 1.11811 18.7592 1.33374 18.9034C1.54937 19.0477 1.8029 19.1248 2.06232 19.125H6.87482V23.9375C6.87505 24.1969 6.95215 24.4505 7.09639 24.6661C7.24062 24.8817 7.44552 25.0498 7.68521 25.149C7.92489 25.2482 8.18861 25.2742 8.44306 25.2237C8.69751 25.1731 8.93127 25.0483 9.11482 24.865L14.3648 19.615C14.611 19.3691 14.7495 19.0355 14.7498 18.6875V13.105L22.6248 5.23V8.1875ZM12.0723 13.9275L12.0216 13.875H7.85657L5.22982 16.5H9.49982V20.77L12.1248 18.145V13.9765L12.0723 13.9275Z" fill="#1364A2"/>
                   </svg></span>
                   
                   
-                  نتيجة واضحة وإنجاز حقيقي</li>
-                <p>ينهي كل كورس بمشروع عملي وشهادة معتمدة.</p>
+                  <span data-translate="why_item4_title">نتائج واضحة وإنجاز حقيقي</span></li>
+                <p data-translate="why_item4_desc">ينتهي كل كورس بمشروع عملي و شهادة معتمدة.</p>
                 <li> <span class="icon-wrapper"><svg width="20" height="29" viewBox="0 0 20 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M13.312 7.5C13.8195 8.21458 14.187 9.18292 14.187 10.125C14.187 10.8182 14.0223 11.5015 13.7064 12.1186C13.3905 12.7357 12.9325 13.2688 12.3701 13.6742C11.8077 14.0795 11.1571 14.3454 10.4718 14.45C9.7865 14.5545 9.08617 14.4947 8.42851 14.2755C7.77086 14.0563 7.17472 13.6839 6.6892 13.1891C6.20369 12.6943 5.84271 12.0912 5.63601 11.4295C5.42932 10.7678 5.38282 10.0664 5.50035 9.38326C5.61788 8.70007 5.89608 8.05458 6.31201 7.5M6.31201 7.5L9.81201 8.66667L18.562 5.75L9.81201 1.375L1.06201 5.75M6.31201 7.5L1.06201 5.75M1.06201 5.75V11.5833M1.06201 25.875V22.7396C1.06201 20.2852 2.91847 17.9154 5.36555 17.4181L9.81347 21.6983L14.1885 17.4035C16.6706 17.8702 18.5635 20.2619 18.5635 22.7396V25.875C18.5635 26.7952 17.7789 27.5419 16.8135 27.5419H2.81347C1.84659 27.5419 1.06201 26.7952 1.06201 25.875Z" stroke="#1364A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg></span>
                   
-                  بيئة تعليمية آمنة ومحفزة</li>
-                <p>تجربة تعليمية ممتعة وداعمة، تشجع على الابتكار.</p>
+                  <span data-translate="why_item5_title">بيئة تعليمية آمنة ومحفزة</span></li>
+                <p data-translate="why_item5_desc">تجربة تعليمية ممتعة و داعمة تشجع على الابتكار.</p>
             </ul>
         </div>
     <div class="images">
@@ -249,10 +243,9 @@
     <section id="projects">
       <div
         class="title d-flex flex-column justify-content-center align-items-center">
-        <h3> أفكار تتحول لإنجازات </h3>
-        <p
-          >من فكرة بسيطة إلى مشروع حقيقي، هنا نحتفل بإبداعات الطلاب التي أصبحت
-          واقعا ملموسا
+        <h3 data-translate="projects_title">أفكار تتحول لإنجازات</h3>
+        <p data-translate="projects_desc"
+          >من فكرة بسيطة إلى مشروع حقيقي، هنا نحتفل بإبداعات الطلاب التي أصبحت واقعا ملموسا
         </p>
       </div>
       <div class="photos">
@@ -280,7 +273,7 @@
 
       </div>
       <div class="title d-flex justify-content-center mt-5 mb-5">
-        <h3>أصوات النجاح طلابنا يحكون قصتهم</h3>
+        <h3 data-translate="testimonials_title">أصوات النجاح طلابنا يحكون قصتهم</h3>
       </div>
       <div class="videos">
         <div class="image-container">
@@ -296,8 +289,8 @@
                 data-youtube="https://www.youtube.com/watch?v=FDs0w8SJTB8&list=PLE2nsvKopxNMlzkssNqQ-mWK4UqOd9qXg&index=5">
                 <i class="fas fa-play-circle"></i>
               </button>
-              <h5 class="card-title">مريم تامر</h5>
-              <p class="card-text">14 سنوات </p>
+              <h5 class="card-title">Mariam Tamer</h5>
+              <p class="card-text">14 years </p>
             </div>
           </div>
           <div class="card video-card">
@@ -312,8 +305,8 @@
                 data-youtube="https://youtube.com/shorts/myNLdbcUf4M?si=pet3lK-ZYjeP9ZrV">
                 <i class="fas fa-play-circle"></i>
               </button>
-              <h5 class="card-title">سهيلة </h5>
-              <p class="card-text">14 سنوات </p>
+              <h5 class="card-title">Sohaila </h5>
+              <p class="card-text">14 years </p>
             </div>
           </div>
           <div class="card video-card">
@@ -328,8 +321,8 @@
                 data-youtube="https://www.youtube.com/watch?v=88O4r3yV2QI&list=PLE2nsvKopxNMlzkssNqQ-mWK4UqOd9qXg&index=2">
                 <i class="fas fa-play-circle"></i>
               </button>
-              <h5 class="card-title">عبدالرحمن عمرو</h5>
-              <p class="card-text">10 سنوات </p>
+              <h5 class="card-title">Abdelrahman Amr</h5>
+              <p class="card-text">10 years </p>
             </div>
           </div>
           <div class="card video-card">
@@ -344,8 +337,8 @@
                 data-youtube="https://www.youtube.com/watch?v=JSja1U_qkJs&list=PLE2nsvKopxNMlzkssNqQ-mWK4UqOd9qXg&index=1">
                 <i class="fas fa-play-circle"></i>
               </button>
-              <h5 class="card-title">مصطفي نبيل</h5>
-              <p class="card-text">9 سنوات </p>
+              <h5 class="card-title">Mostafa Nabil</h5>
+              <p class="card-text">9 years </p>
             </div>
           </div>
           <div class="card video-card">
@@ -360,8 +353,8 @@
                 data-youtube="https://www.youtube.com/watch?v=jkvmIXXQZT0&list=PLE2nsvKopxNMlzkssNqQ-mWK4UqOd9qXg&index=3">
                 <i class="fas fa-play-circle"></i>
               </button>
-              <h5 class="card-title">يوسف محمود</h5>
-              <p class="card-text">13 سنوات </p>
+              <h5 class="card-title">Youssef Mahmoud</h5>
+              <p class="card-text">13 years </p>
             </div>
           </div>
           
@@ -377,8 +370,8 @@
                 data-youtube="https://www.youtube.com/watch?v=FTAFn1di4YA&list=PLE2nsvKopxNMlzkssNqQ-mWK4UqOd9qXg&index=7">
                 <i class="fas fa-play-circle"></i>
               </button>
-              <h5 class="card-title">على</h5>
-              <p class="card-text">9 سنوات </p>
+              <h5 class="card-title">Ali</h5>
+              <p class="card-text">9 years </p>
             </div>
           </div>
           <div class="card video-card">
@@ -394,8 +387,8 @@
                 data-youtube="https://www.youtube.com/watch?v=ydWST9wQ0tc&list=PLE2nsvKopxNMlzkssNqQ-mWK4UqOd9qXg&index=8">
                 <i class="fas fa-play-circle"></i>
               </button>
-              <h5 class="card-title">مالك</h5>
-              <p class="card-text">9 سنوات </p>
+              <h5 class="card-title">Malik</h5>
+              <p class="card-text">9 years </p>
             </div>
           </div>
           <div class="card video-card">
@@ -411,8 +404,8 @@
                 data-youtube="https://www.youtube.com/watch?v=D3hlGra-uIY&list=PLE2nsvKopxNMlzkssNqQ-mWK4UqOd9qXg&index=9">
                 <i class="fas fa-play-circle"></i>
               </button>
-              <h5 class="card-title">جنة</h5>
-              <p class="card-text">13 سنوات </p>
+              <h5 class="card-title">Janna</h5>
+              <p class="card-text">13 years </p>
             </div>
           </div>
           <div class="card video-card">
@@ -428,8 +421,8 @@
                 data-youtube="https://www.youtube.com/watch?v=r07fN95fDWs&list=PLE2nsvKopxNMlzkssNqQ-mWK4UqOd9qXg&index=10">
                 <i class="fas fa-play-circle"></i>
               </button>
-              <h5 class="card-title">غانا</h5>
-              <p class="card-text">14 سنوات </p>
+              <h5 class="card-title">Ghada</h5>
+              <p class="card-text">14 years </p>
             </div>
           </div>
           <div class="card video-card">
@@ -445,8 +438,8 @@
                 data-youtube="https://www.youtube.com/watch?v=1I_-yms64DE&list=PLE2nsvKopxNMlzkssNqQ-mWK4UqOd9qXg&index=11">
                 <i class="fas fa-play-circle"></i>
               </button>
-              <h5 class="card-title">كاروس</h5>
-              <p class="card-text">10 سنوات </p>
+              <h5 class="card-title">Caros</h5>
+              <p class="card-text">10 years </p>
             </div>
           </div>
           <div class="card video-card">
@@ -462,8 +455,8 @@
                 data-youtube="https://www.youtube.com/watch?v=pXychzLwcoU&list=PLE2nsvKopxNMlzkssNqQ-mWK4UqOd9qXg&index=12">
                 <i class="fas fa-play-circle"></i>
               </button>
-              <h5 class="card-title">عمار محمود</h5>
-              <p class="card-text">12 سنوات </p>
+              <h5 class="card-title">Ammar Mahmoud</h5>
+              <p class="card-text">12 years </p>
             </div>
           </div>
         </div>
@@ -471,25 +464,25 @@
       <div class="analysis">
     <div class="col">
       <h3>3</h3>
-      <h4>فروع فى مصر</h4>
+      <h4 data-translate="analysis_branches">فروع في مصر</h4>
     </div>
     <div class="col">
       <h3>96%</h3>
-      <h4>نسبة رضا طلابنا</h4>
+      <h4 data-translate="analysis_satisfaction">معدل رضا الطلاب</h4>
     </div>
     <div class="col">
       <h3>+950</h3>
-      <h4>ولي أمر راضي</h4>
+      <h4 data-translate="analysis_parents">أولياء أمور راضون</h4>
     </div>
     <div class="col">
       <h3>+1200</h3>
-      <h4>طالب متخرج</h4>
+      <h4 data-translate="analysis_graduated">طالب متخرج</h4>
     </div>
   </div>
     </section>
     <div id="overlay">
       <div id="modal">
-        <span class="close-btn">&times;</span>
+        <span class="close-btn">×</span>
         <iframe
           src=""
           allow="autoplay; encrypted-media"
@@ -498,8 +491,8 @@
     </div>
     <section id="plan">
       <div class="header-title">
-        <h3>رحلة تعلم طفلك معنا</h3>
-        <p>مع كل تجربة جديدة، نزرع في طفلك حب التعلم وشغف الاكتشاف</p>
+        <h3 data-translate="journey_title">رحلة تعلم طفلك معنا</h3>
+        <p data-translate="journey_desc">مع كل تجربة جديدة، نزرع في طفلك حب التعلم وشغف الاكتشاف</p>
       </div>
       <div class="road">
         <img src="imgs/Group 426.webp" alt="">
@@ -512,36 +505,36 @@
         <div class="step1">
           <img src="imgs/Group 428.webp" alt="">
           <div class="text">
-            <h3>حضور أسبوعي مرن</h3>
-            <p style="direction : rtl">جلسة واحدة كل أسبوع سواء أون لاين أو بالحضور المباشر .</p>
+            <h3 data-translate="plan_step1_title">حضور أسبوعي مرن</h3>
+            <p data-translate="plan_step1_desc" style="direction : rtl">حصّة واحدة أسبوعياً، سواء أونلاين أو حضورياً.</p>
           </div>
       </div>
         <div class="step2">
           <img src="imgs/Group 429.webp" alt="">
           <div class="text">
-            <h3>تطبيق عملي داخل الحصة</h3>
-            <p style="direction : rtl">ينفذ الطفل مشروعا بسيطا خلال كل حصة لترسيخ المعلومات.</p>
+            <h3 data-translate="plan_step2_title">تطبيق عملي أثناء الحصة</h3>
+            <p data-translate="plan_step2_desc" style="direction : rtl">ينجز الطفل مشروعاً بسيطاً خلال كل حصة لترسيخ المعلومات.</p>
           </div>
         </div>
         <div class="step3">
           <img src="imgs/Group 430.webp" alt="">
           <div class="text">
-            <h3>فيديوهات للمراجعة والاستكمال</h3>
-            <p style="direction : rtl">نوفر مواد مصورة ليراجع ويتعلم أكثر خلال الأسبوع.</p>
+            <h3 data-translate="plan_step3_title">فيديوهات مراجعة ومتابعة</h3>
+            <p data-translate="plan_step3_desc" style="direction : rtl">نوفر مواد مسجلة للمراجعة و التعلم الإضافي طوال الأسبوع.</p>
           </div>
         </div>
         <div class="step4">
           <img src="imgs/Group 431.webp" alt="">
           <div class="text">
-            <h3>مشروع تخرج في نهاية البرنامج</h3>
-            <p style="direction : rtl">ينفذ الطفل مشروعا نهائيا يلخص فيه كل ما تعلمه ويعرضه بفخر.</p>
+            <h3 data-translate="plan_step4_title">مشروع تخرج في نهاية البرنامج</h3>
+            <p data-translate="plan_step4_desc" style="direction : rtl">ينجز الطفل مشروعاً نهائياً يلخص فيه كل ما تعلمه و يعرضه بكل فخر.</p>
           </div>
         </div>
       </div>
     </section>
     <section id="certificate">
       <div class="header-title">
-        <h3>“نؤمن أن كل خطوة في رحلتنا مع طفلك هي بداية لحلم جديد يكبر معه”</h3>
+        <h3 data-translate="quote">"نؤمن أن كل خطوة في رحلتنا مع طفلك هي بداية لحلم جديد يكبر معه"</h3>
       </div>
       <img class="des1" src="imgs/Layer_1.webp" alt="">
       <div class="image">
@@ -553,7 +546,7 @@
   <div class="brands">
 
     <div class="header-title">
-      <h3>مع شركائنا  نفتح لأطفالكم أبواب المستقبل</h3>
+      <h3 data-translate="partners_title">مع شركائنا نفتح لأطفالكم أبواب المستقبل</h3>
     </div>
     <div class="logos">
       <img src="imgs/WhatsApp_Image_2025-05-08_at_17.13.40_6ee52157-removebg-preview.webp" alt="">
@@ -563,192 +556,184 @@
     </div>
   </div>
   <div class="header-title">
-    <h3>استثمر في مهارات طفلك مع أفضل الخيارات</h3>
+    <h3 data-translate="pricing_title">استثمر في مهارات طفلك مع أفضل الخيارات</h3>
   </div>
   <div class="container-price">
-    <!-- Features List -->
     <div class="features">
-      <h2>كل الخطط تشمل:</h2>
+      <h2 data-translate="features_title">كل الخطط تشمل:</h2>
       <ul>
          <li>
           <svg viewBox="0 0 22 21" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.6 21L5.7 17.8L2.1 17L2.45 13.3L0 10.5L2.45 7.7L2.1 4L5.7 3.2L7.6 0L11 1.45L14.4 0L16.3 3.2L19.9 4L19.55 7.7L22 10.5L19.55 13.3L19.9 17L16.3 17.8L14.4 21L11 19.55L7.6 21ZM9.95 14.05L15.6 8.4L14.2 6.95L9.95 11.2L7.8 9.1L6.4 10.5L9.95 14.05Z" fill="#FF7500"/>
           </svg>
-          <span>حضور مجموعة صغيرة (بحد أقصى 7 طلاب)</span>
+          <span data-translate="feature_item1">حضور في مجموعات صغيرة (بحد أقصى ٧ طلاب)</span>
         </li>
         <li>
           <svg viewBox="0 0 22 21" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.6 21L5.7 17.8L2.1 17L2.45 13.3L0 10.5L2.45 7.7L2.1 4L5.7 3.2L7.6 0L11 1.45L14.4 0L16.3 3.2L19.9 4L19.55 7.7L22 10.5L19.55 13.3L19.9 17L16.3 17.8L14.4 21L11 19.55L7.6 21ZM9.95 14.05L15.6 8.4L14.2 6.95L9.95 11.2L7.8 9.1L6.4 10.5L9.95 14.05Z" fill="#FF7500"/>
           </svg>
-          <span>تأسك عملية في كل جلسة</span>
+          <span data-translate="feature_item2">مهام عملية في كل حصة</span>
         </li>
         <li>
           <svg viewBox="0 0 22 21" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.6 21L5.7 17.8L2.1 17L2.45 13.3L0 10.5L2.45 7.7L2.1 4L5.7 3.2L7.6 0L11 1.45L14.4 0L16.3 3.2L19.9 4L19.55 7.7L22 10.5L19.55 13.3L19.9 17L16.3 17.8L14.4 21L11 19.55L7.6 21ZM9.95 14.05L15.6 8.4L14.2 6.95L9.95 11.2L7.8 9.1L6.4 10.5L9.95 14.05Z" fill="#FF7500"/>
           </svg>
-          <span>فيديوهات تعليمية مدى الحياة</span>
+          <span data-translate="feature_item3">فيديوهات تعليمية مدى الحياة</span>
         </li>
         <li>
           <svg viewBox="0 0 22 21" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.6 21L5.7 17.8L2.1 17L2.45 13.3L0 10.5L2.45 7.7L2.1 4L5.7 3.2L7.6 0L11 1.45L14.4 0L16.3 3.2L19.9 4L19.55 7.7L22 10.5L19.55 13.3L19.9 17L16.3 17.8L14.4 21L11 19.55L7.6 21ZM9.95 14.05L15.6 8.4L14.2 6.95L9.95 11.2L7.8 9.1L6.4 10.5L9.95 14.05Z" fill="#FF7500"/>
           </svg>
-          <span>متابعة فردية عبر الواجبات</span>
+          <span data-translate="feature_item4">متابعة فردية من خلال الواجبات</span>
         </li>
         <li>
           <svg viewBox="0 0 22 21" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.6 21L5.7 17.8L2.1 17L2.45 13.3L0 10.5L2.45 7.7L2.1 4L5.7 3.2L7.6 0L11 1.45L14.4 0L16.3 3.2L19.9 4L19.55 7.7L22 10.5L19.55 13.3L19.9 17L16.3 17.8L14.4 21L11 19.55L7.6 21ZM9.95 14.05L15.6 8.4L14.2 6.95L9.95 11.2L7.8 9.1L6.4 10.5L9.95 14.05Z" fill="#FF7500"/>
           </svg>
-          <span>لا مصاريف إضافية للأدوات</span>
+          <span data-translate="feature_item5">لا توجد رسوم إضافية على المعدات</span>
         </li>
         <li>
           <svg viewBox="0 0 22 21" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.6 21L5.7 17.8L2.1 17L2.45 13.3L0 10.5L2.45 7.7L2.1 4L5.7 3.2L7.6 0L11 1.45L14.4 0L16.3 3.2L19.9 4L19.55 7.7L22 10.5L19.55 13.3L19.9 17L16.3 17.8L14.4 21L11 19.55L7.6 21ZM9.95 14.05L15.6 8.4L14.2 6.95L9.95 11.2L7.8 9.1L6.4 10.5L9.95 14.05Z" fill="#FF7500"/>
           </svg>
-          <span>شهادة معتمدة عند اجتياز كل مستوى</span>
+          <span data-translate="feature_item6">شهادة معتمدة عند الانتهاء من كل مستوى</span>
         </li>
         <li>
           <svg viewBox="0 0 22 21" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.6 21L5.7 17.8L2.1 17L2.45 13.3L0 10.5L2.45 7.7L2.1 4L5.7 3.2L7.6 0L11 1.45L14.4 0L16.3 3.2L19.9 4L19.55 7.7L22 10.5L19.55 13.3L19.9 17L16.3 17.8L14.4 21L11 19.55L7.6 21ZM9.95 14.05L15.6 8.4L14.2 6.95L9.95 11.2L7.8 9.1L6.4 10.5L9.95 14.05Z" fill="#FF7500"/>
           </svg>
-          <span>دعم فني مستمر للإجابة على أسئلة الطفل</span>
+          <span data-translate="feature_item7">دعم فني مستمر للرد على أسئلة الأطفال</span>
         </li>
         <li>
           <svg viewBox="0 0 22 21" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.6 21L5.7 17.8L2.1 17L2.45 13.3L0 10.5L2.45 7.7L2.1 4L5.7 3.2L7.6 0L11 1.45L14.4 0L16.3 3.2L19.9 4L19.55 7.7L22 10.5L19.55 13.3L19.9 17L16.3 17.8L14.4 21L11 19.55L7.6 21ZM9.95 14.05L15.6 8.4L14.2 6.95L9.95 11.2L7.8 9.1L6.4 10.5L9.95 14.05Z" fill="#FF7500"/>
           </svg>
-          <span> بيئة تعليمية ممتعة ومحفّزة على الإبداع</span>
+          <span data-translate="feature_item8">بيئة تعليمية ممتعة و محفزة على الإبداع</span>
         </li>
       
       </ul>
     </div>
 
-    <!-- Pricing Plans -->
     <div class="plans">
       <div class="plan-card">
         <div class="plan-header">
-          <h3>الخطة المبتدئة</h3>
-          <div class="plan-price">600 ج.م </div>
+          <h3 data-translate="plan_beginner_title">الخطة المبتدئة</h3>
+          <div class="plan-price">600 EGP</div>
         </div>
-        <p class="plan-desc">مثالية لبداية قوية: يكتسب طفلك أساسيات المهارة ويبدأ أولى مشاريعه العملية بثقة</p>
+        <p class="plan-desc" data-translate="plan_beginner_desc">مثالية لبداية قوية: يكتسب طفلك مهارات أساسية ويبدأ مشاريعه العملية الأولى بثقة</p>
       </div>
 
       <div class="plan-card">
         <div class="plan-header">
-          <h3>الخطة المتوسطة</h3>
-          <div class="plan-price">900 ج.م </div>
+          <h3 data-translate="plan_intermediate_title">الخطة المتوسطة</h3>
+          <div class="plan-price">900 EGP</div>
         </div>
-        <p class="plan-desc">نقلة نوعية لمهاراته: يتعمق طفلك أكثر، وينفذ مشاريع أكثر تطورًا تؤهله للمرحلة القادمة</p>
+        <p class="plan-desc" data-translate="plan_intermediate_desc">قفزة نوعية في مهاراته: يتعمق طفلك ويُنفذ مشاريع أكثر تقدماً تؤهله للمرحلة التالية</p>
       </div>
 
       <div class="plan-card recommended">
         <div class="plan-header">
-          <h3>الخطة المتقدمة</h3>
           <div class="plan-price-con">
 
-            <div class="plan-price">1200 ج.م </div>
-            <span class="badge rounded-pill text-bg">الأكثر مبيعا</span>
+            <h3 data-translate="plan_advanced_title">الخطة المتقدمة</h3>
+            <div class="plan-price">1200 EGP</div>
+            <span class="badge rounded-pill text-bg" data-translate="plan_advanced_badge">الأكثر شعبية</span>
           </div>
         </div>
-        <p class="plan-desc">رحلة نحو الاحتراف: يصل طفلك إلى مستوى متقدم، بمهارات عملية قادرة على صناعة فرق حقيقي</p>
+        <p class="plan-desc" data-translate="plan_advanced_desc">رحلة نحو الاحتراف: يصل طفلك لمستوى متقدم، بمهارات عملية قادرة على إحداث فرق حقيقي</p>
       </div>
     </div>
   </div>
 </section>
 <section id="contact">
   <div class="header-title">
-    <h3>كل اللي محتاج تعرفه قبل بداية رحلة طفلك معنا</h3>
+    <h3 data-translate="faq_title">كل اللي محتاج تعرفه قبل بداية رحلة طفلك معنا</h3>
   </div>
 
   <div class="container">
-       <!-- FAQ Section -->
        <div class="faq-container">
          <div class="faq-item active">
            <div class="faq-question">
-             <span>هل يوجد تطبيق عملي للمناهج ؟</span>
+             <span data-translate="faq_q1">هل يوجد تطبيق عملي للمناهج؟</span>
              <div class="circle-icon">
                <i class="fas fa-chevron-down"></i>
              </div>
            </div>
            <div class="faq-answer show">
              <p
-               >نعم بالتأكيد ! , في مخترعون نحن نعتمد اعتماد كلي علي التعلم
-               بالتجربة و يوجد فيه كل محاضرة اكثر من مشروعين علي الاقل</p
+               data-translate="faq_a1">نعم بالتأكيد! في مخترعون نعتمد كليا على التعلم التجريبي، ويوجد في كل محاضرة مشروعين على الأقل</p
              >
            </div>
          </div>
  
          <div class="faq-item">
            <div class="faq-question">
-             <span>كيف اقوم بالحجز ؟</span>
+             <span data-translate="faq_q2">كيف اقوم بالحجز؟</span>
              <div class="circle-icon">
                <i class="fas fa-chevron-down"></i>
              </div>
            </div>
            <div class="faq-answer">
              <p
-               >تستطيع الاتصال بنا علي الارقام الموضحة في الموقع , او الحجز عن
-               طريق زر " احجز الان" او عن طريق الواتس ااب</p
+               data-translate="faq_a2">يمكنك التواصل معنا على الأرقام الموضحة بالموقع، او الحجز عن طريق زر 'احجز الآن'، او عن طريق الواتساب</p
              >
            </div>
          </div>
  
          <div class="faq-item">
            <div class="faq-question">
-             <span>ما هي طريق الحضور المتاحة ؟</span>
+             <span data-translate="faq_q3">ما هي طرق الحضور المتاحة؟</span>
              <div class="circle-icon">
                <i class="fas fa-chevron-down"></i>
              </div>
            </div>
            <div class="faq-answer">
              <p
-               >يوجد لدينا 4 انواع للحضور ( الحضور في احد فروعنا – الحضور اونلاين – الحضور المدمج بين الاونلاين و الفروع – شراء الكورسات المسجلة في المنصة الالكترونة )</p
+               data-translate="faq_a3">لدينا 4 أنواع من الحضور (حضور فعلي في أحد الفروع – حضور أونلاين – حضور مدمج بين الأونلاين والفروع – شراء كورسات مسجلة على منصة التعلم الإلكتروني)</p
              >
            </div>
          </div>
          <div class="faq-item">
            <div class="faq-question">
-             <span>اين هي فروعكم ؟</span>
+             <span data-translate="faq_q4">اين توجد فروعكم؟</span>
              <div class="circle-icon">
                <i class="fas fa-chevron-down"></i>
              </div>
            </div>
            <div class="faq-answer">
              <p
-               >لدينا فروع في محافظات ( القاهرة – اسكندرية – الغردقة ) و لدينا اكثر من فرع و اكثر من مدرسة 
- لذلك يفضل للعميل ان يوضح المنطقة السكنية له و نحن نختار اقرب منطقة لضمان راحتكم</p>
+               data-translate="faq_a4">لدينا فروع في محافظات (القاهرة – الإسكندرية – الغردقة) و لدينا أكثر من فرع و أكثر من مدرسة لذلك يفضل من العميل تحديد منطقته السكنية، و نحن سوف نختار له أقرب مكان لضمان راحتك</p>
              >
            </div>
          </div>
          <div class="faq-item">
            <div class="faq-question">
-             <span>ما هي المواعيد ؟</span>
+             <span data-translate="faq_q5">ما هي المواعيد؟</span>
              <div class="circle-icon">
                <i class="fas fa-chevron-down"></i>
              </div>
            </div>
            <div class="faq-answer">
              <p
-               >عند التسجيل الموظفين المختصين سيتواصلو ب حضراتكم لتحديد اكثر موعد مناسب لكم</p
+               data-translate="faq_a5">عند التسجيل سوف يقوم الكادر المتخصص بالتواصل معك لتحديد أنسب ميعاد لك</p>
              >
            </div>
          </div>
          <div class="faq-item">
            <div class="faq-question">
-             <span>
- هل استطيع تجربة الاكاديمية قبل البدء ؟</span>
+             <span data-translate="faq_q6">هل يمكنني تجربة الأكاديمية قبل البدء؟</span>
              <div class="circle-icon">
                <i class="fas fa-chevron-down"></i>
              </div>
            </div>
            <div class="faq-answer">
              <p
-               > نعم بالتأكيد , نحن في مخترعون واثقون برضاء عملائنا لذلك نسمح بحضور اول محاضرة بشكل مجاني</p
+               data-translate="faq_a6">نعم بالتأكيد، نحن في مخترعون واثقون من رضا عملائنا، لذلك نتيح حضور المحاضرة الأولى مجانًا</p>
              >
            </div>
          </div>
        </div>
  
-       <!-- Contact Section -->
        <div class="contact-section">
          <div class="contact-info">
            <div class="contact-item">
@@ -777,30 +762,33 @@
          </div>
  
          <div class="contact-form">
-           <h5 class="contact-title">سجل اهتمامك وابدأ رحلة طفلك</h5>
+           <h5 class="contact-title" data-translate="contact_form_title">سجل اهتمامك وابدأ رحلة طفلك</h5>
            <form>
              <div class="mb-3">
                <input
                  type="text"
                  class="form-control"
+                 data-translate-placeholder="form_name_ph"
                  placeholder="الاسم" />
              </div>
              <div class="mb-3">
                <input
                  type="email"
                  class="form-control"
-                 placeholder="عنوان البريد الإلكتروني" />
+                 data-translate-placeholder="form_email_ph"
+                 placeholder="البريد الإلكتروني" />
              </div>
              <div class="mb-3">
                <textarea
                  class="form-control"
                  rows="4"
+                 data-translate-placeholder="form_message_ph"
                  placeholder="اكتب رسالتك"></textarea>
              </div>
              <button
                type="submit"
                class="btn btn-submit"
-               >أرسل رسالتك</button
+               data-translate="form_submit_btn">أرسل رسالتك</button
              >
            </form>
          </div>
@@ -813,26 +801,26 @@
             <div class="above_line">
                 <div class="right">
                     <img src="imgs/logo  2 1.webp" alt="Mokhtoreon Academy Logo">
-                    <h2>نصنع مستقبل المبدعين</h2>
-                    <p ">نؤمن بقدرات كل طفل و نصنع معه بداية جديدة نحو المستقبل</p>
+                    <h2 data-translate="footer_slogan">نصنع مستقبل المبدعين</h2>
+                    <p data-translate="footer_desc">نؤمن بقدرات كل طفل و نصنع معه بداية جديدة نحو المستقبل</p>
                 </div>
                 <div class="left">
-                    <h2>كورساتنا</h2>
+                    <h2 data-translate="footer_courses_heading">كورساتنا</h2>
                     <ul>
-                        <li>الروبوتات و الذكاء الإصطناعي</li>
-                        <li>تصميم و تطوير المواقع الإلكترونية</li>
-                        <li>تصميم الجرافيك</li>
-                        <li>برمجة تطبيقات الهاتف</li>
-                        <li>بايثون (Python)</li>
+                        <li data-translate="footer_course1">الروبوتات والذكاء الاصطناعي</li>
+                        <li data-translate="footer_course2">تصميم وتطوير المواقع الإلكترونية</li>
+                        <li data-translate="footer_course3">تصميم الجرافيك</li>
+                        <li data-translate="footer_course4">برمجة تطبيقات الهاتف</li>
+                        <li data-translate="footer_course5">بايثون</li>
                     </ul>
                     <button>
-                        <a href="https://eg-learn.vercel.app">اكتشف منصة التعلم الإلكتروني</a>
+                        <a href="https://eg-learn.vercel.app" data-translate="footer_discover_platform">اكتشف منصة التعلم الإلكتروني</a>
                         <i class="fa-solid fa-arrow-left"></i>
                     </button>
                 </div>
             </div>
             <div class="under_line">
-                <p>&copy; 2018 - 2025 أكاديمية مخترعون، كل الحقوق محفوظة</p>
+                <p data-translate="footer_copyright">© 2018 - 2025 أكاديمية مخترعون، كل الحقوق محفوظة</p>
             </div>
         </div>
     </footer>
@@ -850,10 +838,9 @@
     <script src="js/faq.js"></script>
     <script src="js/sidebar.js"></script>
      <script>
-    // دالة التزايد التدريجي (Animation) لكل عداد
     function animateCount(el, target) {
       let start = 0;
-      const duration = 2000; // مدة التعداد بالمللي ثانية (مثلاً: 2 ثانية)
+      const duration = 2000; 
       let startTime = null;
 
       function update(timestamp) {
@@ -863,7 +850,6 @@
         const progress = timestamp - startTime;
         const current = Math.min(Math.floor((progress / duration) * target), target);
         
-        // التحقق من وجود رموز مثل "+" أو "%"
         let displayText = current;
         const originalText = el.getAttribute('data-original') || el.innerText;
         if (originalText.indexOf('+') !== -1) {
@@ -902,7 +888,6 @@
               const numericValue = parseInt(original.replace(/[^\d]/g, ''), 10);
               animateCount(counter, numericValue);
             });
-            // قم بإيقاف المراقبة بعد تشغيل العد مرة واحدة
             observer.disconnect();
           }
         });

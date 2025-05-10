@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -12,6 +12,9 @@
       rel="preconnect"
       href="https://fonts.gstatic.com"
       crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
       rel="stylesheet" />
@@ -27,57 +30,69 @@
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous" />
  
-    <link
-      rel="stylesheet"
-      href="css/rtl.css" />
-    <link
-      rel="stylesheet"
-      href="css/book.css" />
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/book.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/dual-language.css" />
+    
     <link
       rel="icon"
       href="imgs/Artboard 1 copy.svg"
       type="image/x-icon" />
-    <title>المخترعون - احجز الآن</title>
+    <title>المخترعون - Mukhtar3oon</title>
   </head>
   <body>
    
     <div class="form-container">
       <div class="form-header">
-        <img
-          src="imgs/logo.webp"
-          alt="المخترعون" />
-        <h2>ابدأ رحلة طفلك التعليمية اليوم</h2>
-        <p
-          >املأ النموذج التالي، وفريقنا سيتواصل معك لتأكيد الحجز وتفاصيل
-          البدء</p
-        >
+        <div class="header-top">
+          <img
+            src="imgs/logo.webp"
+            alt="المخترعون" />
+        </div>
+        <div class="bilingual-header">
+          <div class="ar">
+            <h2>ابدأ رحلة طفلك التعليمية اليوم</h2>
+            <p>املأ النموذج التالي، وفريقنا سيتواصل معك لتأكيد الحجز وتفاصيل البدء</p>
+          </div>
+          <div class="en">
+            <h2>Start Your Child's Educational Journey Today</h2>
+            <p>Fill out the form below, and our team will contact you to confirm your booking and provide details</p>
+          </div>
+        </div>
       </div>
 
       <form id="registrationForm">
         <div class="form-group">
-          <h3 class="section-title">اسم الطفل</h3>
+          <h3 class="section-title" id="childName">اسم الطفل</h3>
           <input
             type="text"
             class="form-control"
+            id="childNameInput"
+            placeholder="اسم الطفل"
             required />
         </div>
-
+      
         <div class="form-group">
-          <h3 class="section-title">رقم الهاتف</h3>
+          <h3 class="section-title" id="phoneNumber">رقم الهاتف</h3>
           <input
             type="tel"
             class="form-control"
+            id="phoneNumberInput"
+            placeholder="رقم الهاتف"
             required />
         </div>
-
+      
         <div class="form-group">
-          <h3 class="section-title">منطقة السكن</h3>
+          <h3 class="section-title" id="residentialArea">منطقة السكن</h3>
           <input
             type="text"
             class="form-control"
+            id="residentialAreaInput"
+            placeholder="منطقة السكن"
             required />
         </div>
-
+      
         <div class="form-group">
           <h3 class="section-title">عمر الطفل</h3>
           <select
@@ -130,72 +145,117 @@
           >
         </div>
 
-<!-- الميعاد الأول -->
-<div class="appointment-section">
-  <h3 class="section-title">الميعاد الأول</h3>
+<!-- First Appointment / الميعاد الأول -->
+<div class="appointment-section bilingual-field">
+  <div class="field-label">
+    <h3 class="ar">الميعاد الأول</h3>
+    <h3 class="en">First Appointment</h3>
+  </div>
 
-  <!-- اختيار اليوم -->
+  <!-- Day Selection / اختيار اليوم -->
   <div class="form-group">
-    <div class="radio-group">
+    <div class="radio-group bilingual-radio">
       <div class="radio-option">
         <input type="radio" id="day1_1" name="day1" value="sunday" />
-        <label for="day1_1">الأحد</label>
+        <label for="day1_1">
+          <span class="ar">الأحد</span>
+          <span class="en">Sunday</span>
+        </label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day1_2" name="day1" value="monday" />
-        <label for="day1_2">الاثنين</label>
+        <label for="day1_2">
+          <span class="ar">الاثنين</span>
+          <span class="en">Monday</span>
+        </label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day1_3" name="day1" value="tuesday" />
-        <label for="day1_3">الثلاثاء</label>
+        <label for="day1_3">
+          <span class="ar">الثلاثاء</span>
+          <span class="en">Tuesday</span>
+        </label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day1_4" name="day1" value="wednesday" />
-        <label for="day1_4">الأربعاء</label>
+        <label for="day1_4">
+          <span class="ar">الأربعاء</span>
+          <span class="en">Wednesday</span>
+        </label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day1_5" name="day1" value="thursday" />
-        <label for="day1_5">الخميس</label>
+        <label for="day1_5">
+          <span class="ar">الخميس</span>
+          <span class="en">Thursday</span>
+        </label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day1_6" name="day1" value="friday" />
-        <label for="day1_6">الجمعة</label>
+        <label for="day1_6">
+          <span class="ar">الجمعة</span>
+          <span class="en">Friday</span>
+        </label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day1_7" name="day1" value="saturday" />
-        <label for="day1_7">السبت</label>
+        <label for="day1_7">
+          <span class="ar">السبت</span>
+          <span class="en">Saturday</span>
+        </label>
       </div>
     </div>
   </div>
 
-  <!-- اختيار التوقيت -->
-  <h3 class="section-title">الوقت المناسب للميعاد الأول</h3>
+  <!-- Time Selection / اختيار التوقيت -->
+  <div class="field-label">
+    <h3 class="ar">الوقت المناسب للميعاد الأول</h3>
+    <h3 class="en">Time for First Appointment</h3>
+  </div>
 
   <div class="form-group">
-    <div class="radio-group">
+    <div class="radio-group bilingual-radio">
       <div class="radio-option">
         <input type="radio" id="time1_1" name="time1" value="10am" />
-        <label for="time1_1">10 صباحًا</label>
+        <label for="time1_1">
+          <span class="ar">10 صباحًا</span>
+          <span class="en">10 AM</span>
+        </label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time1_2" name="time1" value="12pm" />
-        <label for="time1_2">12 ظهرًا</label>
+        <label for="time1_2">
+          <span class="ar">12 ظهرًا</span>
+          <span class="en">12 PM</span>
+        </label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time1_3" name="time1" value="2pm" />
-        <label for="time1_3">2 عصرًا</label>
+        <label for="time1_3">
+          <span class="ar">2 عصرًا</span>
+          <span class="en">2 PM</span>
+        </label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time1_4" name="time1" value="4pm" />
-        <label for="time1_4">4 عصرًا</label>
+        <label for="time1_4">
+          <span class="ar">4 عصرًا</span>
+          <span class="en">4 PM</span>
+        </label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time1_5" name="time1" value="6pm" />
-        <label for="time1_5">6 مساءً</label>
+        <label for="time1_5">
+          <span class="ar">6 مساءً</span>
+          <span class="en">6 PM</span>
+        </label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time1_6" name="time1" value="8pm" />
-        <label for="time1_6">8 مساءً</label>
+        <label for="time1_6">
+          <span class="ar">8 مساءً</span>
+          <span class="en">8 PM</span>
+        </label>
       </div>
     </div>
   </div>
@@ -342,8 +402,8 @@
 </div>    
         <button
           type="submit"
-          class="submit-btn"
-          >تأكيد</button
+          class="submit-btn bilingual-button"
+          ><span class="ar">تأكيد</span><span class="en">Confirm</span></button
         >
       </form>
     </div>
@@ -352,5 +412,211 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-LMuzWE3GqzXZ+c+eXc9CJtnNpVRLDFj8JXpz+fA+d7D1ZpLC/qZZQUdVDCWiTkP"
       crossorigin="anonymous"></script>
+      
+          <script>
+      // Translations for book.html
+      const bookTranslations = {
+        en: {
+          // Form headers
+          formTitle: "Start Your Child's Educational Journey Today",
+          formSubtitle: "Fill out the form below, and our team will contact you to confirm your booking and provide details",
+          
+          // Form fields
+          childName: "Child's Name",
+          childNameInput: "Child's Name",
+          phoneNumber: "Phone Number",
+          phoneNumberInput: "Phone Number",
+          residentialArea: "Residential Area",
+          residentialAreaInput: "Residential Area",
+          
+          // Age field
+          childAge: "Child's Age",
+          ageSelect: "Select Age",
+          age6to8: "6-8 years",
+          age9to11: "9-11 years",
+          age12to14: "12-14 years",
+          age15to17: "15-17 years",
+          
+          // Attendance method
+          attendanceMethod: "Attendance Method",
+          offline: "Offline (in-person at academy)",
+          online: "Online (via internet)",
+          
+          // Note for appointments
+          appointmentNote: "Attendance is once a week at a fixed time. For your convenience, please select 3 suitable times so we can choose one that works for you.",
+          
+          // First appointment
+          firstAppointment: "First Appointment",
+          time1: "Time for First Appointment",
+          
+          // Second appointment
+          secondAppointment: "Second Appointment",
+          time2: "Time for Second Appointment",
+          
+          // Third appointment
+          thirdAppointment: "Third Appointment",
+          time3: "Time for Third Appointment",
+          
+          // Days
+          sunday: "Sunday",
+          monday: "Monday",
+          tuesday: "Tuesday",
+          wednesday: "Wednesday",
+          thursday: "Thursday",
+          friday: "Friday",
+          saturday: "Saturday",
+          
+          // Times
+          time10am: "10 AM",
+          time12pm: "12 PM",
+          time2pm: "2 PM",
+          time4pm: "4 PM",
+          time6pm: "6 PM", 
+          time8pm: "8 PM",
+          
+          // Button
+          confirm: "Confirm"
+        },
+        ar: {
+          // Form headers
+          formTitle: "ابدأ رحلة طفلك التعليمية اليوم",
+          formSubtitle: "املأ النموذج التالي، وفريقنا سيتواصل معك لتأكيد الحجز وتفاصيل البدء",
+          
+          // Form fields
+          childName: "اسم الطفل",
+          childNameInput: "اسم الطفل",
+          phoneNumber: "رقم الهاتف",
+          phoneNumberInput: "رقم الهاتف",
+          residentialArea: "منطقة السكن",
+          residentialAreaInput: "منطقة السكن",
+          
+          // Age field
+          childAge: "عمر الطفل",
+          ageSelect: "اختر العمر",
+          age6to8: "6-8 سنوات",
+          age9to11: "9-11 سنة",
+          age12to14: "12-14 سنة",
+          age15to17: "15-17 سنة",
+          
+          // Attendance method
+          attendanceMethod: "طريقة الحضور",
+          offline: "Offline (عن طريق الحضور فى مقر الأكاديمة)",
+          online: "Online (عن طريق الأنترنت)",
+          
+          // Note for appointments
+          appointmentNote: "الحضور يكون مرة اسبوعيا في موعد ثابت , لراحة حضراتكم برجاء اختيار 3 مواعيد مناسبة حتي نسطيتع اختيار موعد يناسب حضراتكم",
+          
+          // First appointment
+          firstAppointment: "الميعاد الأول",
+          time1: "الوقت المناسب للميعاد الأول",
+          
+          // Second appointment
+          secondAppointment: "الميعاد الثاني",
+          time2: "الوقت المناسب للميعاد التانى",
+          
+          // Third appointment
+          thirdAppointment: "الميعاد الثالث",
+          time3: "الوقت المناسب للميعاد التالت",
+          
+          // Days
+          sunday: "الأحد",
+          monday: "الاثنين",
+          tuesday: "الثلاثاء",
+          wednesday: "الأربعاء",
+          thursday: "الخميس",
+          friday: "الجمعة",
+          saturday: "السبت",
+          
+          // Times
+          time10am: "10 صباحًا",
+          time12pm: "12 ظهرًا",
+          time2pm: "2 عصرًا",
+          time4pm: "4 عصرًا",
+          time6pm: "6 مساءً",
+          time8pm: "8 مساءً",
+          
+          // Button
+          confirm: "تأكيد"
+        }
+      };
+      
+      // Function to set page language
+      function setLanguage(lang) {
+        // Save language preference
+        localStorage.setItem('language', lang);
+        
+        // Update HTML dir and lang attributes
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.documentElement.lang = lang;
+        
+        // Update stylesheet
+        document.getElementById('direction-style').href = `css/${lang === 'ar' ? 'rtl' : 'ltr'}.css`;
+        
+        // Apply translations
+        const translations = bookTranslations[lang];
+        for (const key in translations) {
+          const element = document.getElementById(key);
+          if (element) {
+            // For form inputs, update placeholder
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+              element.placeholder = translations[key];
+            } else {
+              element.textContent = translations[key];
+            }
+          }
+          
+          // Update placeholders for known inputs
+          const inputs = document.querySelectorAll(`[placeholder="${key}"]`);
+          inputs.forEach(input => {
+            input.placeholder = translations[key];
+          });
+          
+          // Update labels for known form elements
+          const labels = document.querySelectorAll(`label[for="${key}"]`);
+          labels.forEach(label => {
+            label.textContent = translations[key];
+          });
+        }
+        
+        // Add class for transition effect
+        document.body.classList.add('lang-transition');
+        setTimeout(() => {
+          document.body.classList.remove('lang-transition');
+        }, 500);
+      }
+      
+      // Define translatePage globally
+      window.translatePage = function(lang) {
+        setLanguage(lang);
+      };
+      
+      // Function to detect language
+      function detectLanguage() {
+        // Check if a language preference is stored
+        const savedLanguage = localStorage.getItem('language');
+        
+        if (savedLanguage) {
+          return savedLanguage;
+        }
+        
+        // Check browser language
+        const browserLang = navigator.language || navigator.userLanguage;
+        
+        // If browser language starts with 'ar', set to Arabic, otherwise English
+        return browserLang.startsWith('ar') ? 'ar' : 'en';
+      }
+      
+      // Initialize language on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        const currentLang = detectLanguage();
+        setLanguage(currentLang);
+        
+        // Update language icon
+        const langIcon = document.querySelector('.fa-language');
+        if (langIcon) {
+          langIcon.setAttribute('data-language', currentLang);
+        }
+      });
+          </script>
   </body>
 </html>

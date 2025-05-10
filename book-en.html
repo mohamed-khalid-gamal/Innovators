@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800;900&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous" />
+ 
+    <link
+      rel="stylesheet"
+      href="css/ltr.css" />
+    <link
+      rel="stylesheet"
+      href="css/book.css" />
+    <link
+      rel="icon"
+      href="imgs/Artboard 1 copy.svg"
+      type="image/x-icon" />
+    <title>Mukhtar3oon - Book Now</title>
+  </head>
+  <body>
+   
+    <div class="form-container">
+      <div class="form-header">
+        <img
+          src="imgs/logo.webp"
+          alt="Mukhtar3oon" />
+        <h2>Start Your Child's Educational Journey Today</h2>
+        <p>Fill out the form below, and our team will contact you to confirm your booking and provide details</p>
+      </div>
+
+      <form id="registrationForm">
+        <div class="form-group">
+          <h3 class="section-title">Child's Name</h3>
+          <input
+            type="text"
+            class="form-control"
+            required />
+        </div>
+
+        <div class="form-group">
+          <h3 class="section-title">Phone Number</h3>
+          <input
+            type="tel"
+            class="form-control"
+            required />
+        </div>
+
+        <div class="form-group">
+          <h3 class="section-title">Residential Area</h3>
+          <input
+            type="text"
+            class="form-control"
+            required />
+        </div>
+
+        <div class="form-group">
+          <h3 class="section-title">Child's Age</h3>
+          <select
+            class="form-control"
+            required>
+            <option
+              value=""
+              disabled
+              selected
+              >Select Age</option
+            >
+            <option value="6-8">6-8 years</option>
+            <option value="9-11">9-11 years</option>
+            <option value="12-14">12-14 years</option>
+            <option value="15-17">15-17 years</option>
+          </select>
+        </div>
+        
+        <div class="appointment-section">
+          <h3 class="section-title">Attendance Method</h3>
+
+        <div class="form-group">
+          <div class="radio-group">
+            <div class="radio-option">
+              <input
+                type="radio"
+                id="offline"
+                name="attendance"
+                value="offline" />
+              <label for="offline">Offline (Attending at the academy location)</label>
+            </div>
+            <div class="radio-option">
+              <input
+                type="radio"
+                id="online"
+                name="attendance"
+                value="online" />
+              <label for="online">Online (Via internet)</label>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="note">
+          <p>Attendance is once a week at a fixed time. For your convenience, please select 3 suitable times so we can choose the best one for you.</p>
+        </div>
+
+<!-- First Appointment -->
+<div class="appointment-section">
+  <h3 class="section-title">First Appointment</h3>
+
+  <!-- Day Selection -->
+  <div class="form-group">
+    <div class="radio-group">
+      <div class="radio-option">
+        <input type="radio" id="day1_1" name="day1" value="sunday" />
+        <label for="day1_1">Sunday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day1_2" name="day1" value="monday" />
+        <label for="day1_2">Monday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day1_3" name="day1" value="tuesday" />
+        <label for="day1_3">Tuesday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day1_4" name="day1" value="wednesday" />
+        <label for="day1_4">Wednesday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day1_5" name="day1" value="thursday" />
+        <label for="day1_5">Thursday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day1_6" name="day1" value="friday" />
+        <label for="day1_6">Friday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day1_7" name="day1" value="saturday" />
+        <label for="day1_7">Saturday</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Time Selection -->
+  <h3 class="section-title">Preferred Time for First Appointment</h3>
+
+  <div class="form-group">
+    <div class="radio-group">
+      <div class="radio-option">
+        <input type="radio" id="time1_1" name="time1" value="10am" />
+        <label for="time1_1">10 AM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time1_2" name="time1" value="12pm" />
+        <label for="time1_2">12 PM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time1_3" name="time1" value="2pm" />
+        <label for="time1_3">2 PM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time1_4" name="time1" value="4pm" />
+        <label for="time1_4">4 PM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time1_5" name="time1" value="6pm" />
+        <label for="time1_5">6 PM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time1_6" name="time1" value="8pm" />
+        <label for="time1_6">8 PM</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Second Appointment -->
+<div class="appointment-section">
+  <h3 class="section-title">Second Appointment</h3>
+  
+  <!-- Day Selection -->
+  <div class="form-group">
+    <div class="radio-group">
+      <div class="radio-option">
+        <input type="radio" id="day2_1" name="day2" value="sunday" />
+        <label for="day2_1">Sunday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day2_2" name="day2" value="monday" />
+        <label for="day2_2">Monday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day2_3" name="day2" value="tuesday" />
+        <label for="day2_3">Tuesday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day2_4" name="day2" value="wednesday" />
+        <label for="day2_4">Wednesday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day2_5" name="day2" value="thursday" />
+        <label for="day2_5">Thursday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day2_6" name="day2" value="friday" />
+        <label for="day2_6">Friday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day2_7" name="day2" value="saturday" />
+        <label for="day2_7">Saturday</label>
+      </div>
+    </div>
+  </div>
+  <h3 class="section-title">Preferred Time for Second Appointment</h3>
+
+  <!-- Time Selection -->
+  <div class="form-group">
+    <div class="radio-group">
+      <div class="radio-option">
+        <input type="radio" id="time2_1" name="time2" value="10am" />
+        <label for="time2_1">10 AM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time2_2" name="time2" value="12pm" />
+        <label for="time2_2">12 PM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time2_3" name="time2" value="2pm" />
+        <label for="time2_3">2 PM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time2_4" name="time2" value="4pm" />
+        <label for="time2_4">4 PM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time2_5" name="time2" value="6pm" />
+        <label for="time2_5">6 PM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time2_6" name="time2" value="8pm" />
+        <label for="time2_6">8 PM</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Third Appointment -->
+<div class="appointment-section">
+  <h3 class="section-title">Third Appointment</h3>
+  
+  <!-- Day Selection -->
+  <div class="form-group">
+    <div class="radio-group">
+      <div class="radio-option">
+        <input type="radio" id="day3_1" name="day3" value="sunday" />
+        <label for="day3_1">Sunday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day3_2" name="day3" value="monday" />
+        <label for="day3_2">Monday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day3_3" name="day3" value="tuesday" />
+        <label for="day3_3">Tuesday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day3_4" name="day3" value="wednesday" />
+        <label for="day3_4">Wednesday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day3_5" name="day3" value="thursday" />
+        <label for="day3_5">Thursday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day3_6" name="day3" value="friday" />
+        <label for="day3_6">Friday</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="day3_7" name="day3" value="saturday" />
+        <label for="day3_7">Saturday</label>
+      </div>
+    </div>
+  </div>
+  <h3 class="section-title">Preferred Time for Third Appointment</h3>
+
+  <!-- Time Selection -->
+  <div class="form-group">
+    <div class="radio-group">
+      <div class="radio-option">
+        <input type="radio" id="time3_1" name="time3" value="10am" />
+        <label for="time3_1">10 AM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time3_2" name="time3" value="12pm" />
+        <label for="time3_2">12 PM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time3_3" name="time3" value="2pm" />
+        <label for="time3_3">2 PM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time3_4" name="time3" value="4pm" />
+        <label for="time3_4">4 PM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time3_5" name="time3" value="6pm" />
+        <label for="time3_5">6 PM</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time3_6" name="time3" value="8pm" />
+        <label for="time3_6">8 PM</label>
+      </div>
+    </div>
+  </div>
+</div>    
+        <button
+          type="submit"
+          class="submit-btn"
+          >Confirm</button
+        >
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-LMuzWE3GqzXZ+c+eXc9CJtnNpVRLDFj8JXpz+fA+d7D1ZpLC/qZZQUdVDCWiTkP"
+      crossorigin="anonymous"></script>
+    <script src="translate.js"></script>
+    <script src="translate.js"></script>
+  </body>
+</html>
