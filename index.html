@@ -28,7 +28,11 @@
         </nav>    
         <div class="i_btn">
           <button><a href="book.html" data-translate="book_now" onclick="return preserveLanguage(this)">احجز الان</a></button>
-          <i class="fa-solid fa-language" data-language="ar" title="Change Language" style="cursor: pointer; font-size: 1.5rem; padding: 8px; color: #007bff;" onclick="translatePage(this.getAttribute('data-language') === 'ar' ? 'en' : 'ar'); this.setAttribute('data-language', this.getAttribute('data-language') === 'ar' ? 'en' : 'ar');"></i>
+          <div class="lang-btn d-flex align-items-center justify-content-center">
+            <i class="fa-solid fa-globe" data-language="ar" title="Change Language" style="cursor: pointer; font-size: 1.5rem; padding: 8px; color: #007bff;" onclick="translatePage(this.getAttribute('data-language') === 'ar' ? 'en' : 'ar'); this.setAttribute('data-language', this.getAttribute('data-language') === 'ar' ? 'en' : 'ar');"></i>
+            <span id="lang-indicator" style="font-size: 1.5rem; font-weight: bold; color: #007bff;">AR</span>
+          </div>
+          
         </div>
         <button class="hamburger" id="openSidebar" aria-label="Open menu">
           <i class="fa fa-bars"></i>
@@ -728,7 +732,11 @@
        <div class="contact-section">
          <div class="contact-info">
            <div class="contact-item">
-             <span>+20 1007526521</span>
+             <span>Cairo Branch  -  +201007526521</span>
+             <span class="contact-icon"><i class="fas fa-phone"></i></span>
+           </div>
+           <div class="contact-item">
+             <span>Alexandria Branch -  +201027112418</span>
              <span class="contact-icon"><i class="fas fa-phone"></i></span>
            </div>
            <div class="contact-item">

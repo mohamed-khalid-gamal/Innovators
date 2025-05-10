@@ -307,6 +307,12 @@ function translatePage(lang) {
   // Store the new language in localStorage immediately
   localStorage.setItem('preferredLanguage', lang);
   
+  // Update language indicator
+  const langIndicator = document.getElementById('lang-indicator');
+  if (langIndicator) {
+    langIndicator.textContent = lang === 'ar' ? 'E' : 'AR';
+  }
+  
   const elements = document.querySelectorAll('[data-translate], [data-translate-placeholder]');
   console.log('Found elements to translate:', elements.length);
   

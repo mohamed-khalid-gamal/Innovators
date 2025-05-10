@@ -172,7 +172,7 @@ header ul li a:hover
 header .i_btn
 {
     display: flex;
-    gap: 30px;
+    /* gap: 30px; */
     align-items: center;
     flex-shrink: 0;
 }
@@ -638,9 +638,9 @@ body.sidebar-active::before
 
     header img
     {
-        height: 50px;
         margin-right: 10px;
-        filter: brightness(0.9);
+        height: 40px;
+        filter: brightness(0.9) contrast(1.2);
 
     }
 
@@ -659,7 +659,6 @@ body.sidebar-active::before
     .i_btn
     {
         display: flex !important;
-        gap: 15px;
         flex-shrink: 0;
     }
 
@@ -697,12 +696,12 @@ body.sidebar-active::before
     header img
     {
         height: 40px;
-        filter: brightness(0.9);
+        filter: brightness(0.9) contrast(1.2);
     }
 
     .i_btn
     {
-        gap: 10px;
+        /* gap: 10px; */
     }
 
     .i_btn button
@@ -2239,6 +2238,7 @@ footer .under_line
     height: auto;
     flex-shrink: 0;
     margin-left: 8px;
+    margin-right: 8px;
 }
 
 .features ul li span
@@ -2535,6 +2535,7 @@ footer .under_line
 .contact-item .contact-icon
 {
     margin-left: 10px;
+    margin-right: 10px;
     color: #0d6efd;
     flex-shrink: 0;
 }
