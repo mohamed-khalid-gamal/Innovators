@@ -290,6 +290,7 @@ const translations = {
   }
 };
 
+/* Start of Selection */
 function getCurrentPage() {
   const path = window.location.pathname;
   if (path.includes('book.html')) {
@@ -337,16 +338,22 @@ function translatePage(lang) {
   
   // Set direction based on language
   document.documentElement.lang = lang;
-  // Ensure 'main' element exists before trying to set its style
-  const mainElement = document.querySelector('html');
-  if (mainElement) {
-    mainElement.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  
+  // Add or update the direction style
+  let directionStyle = document.getElementById('direction-style');
+  if (!directionStyle) {
+    directionStyle = document.createElement('style');
+    directionStyle.id = 'direction-style';
+    document.head.appendChild(directionStyle);
   }
+  
+  directionStyle.textContent = `* { direction: ${lang === 'ar' ? 'rtl' : 'ltr'} !important; }`;
   
   // Save language preference to local storage
   localStorage.setItem('preferredLanguage', lang);
   
-  // Visual indicator that translation happened (optional feedback)
+  // Visual indicator that translation happened
   const indicator = document.createElement('div');
   indicator.textContent = 'Language changed to ' + (lang === 'ar' ? 'Arabic' : 'English');
   indicator.style.position = 'fixed';
@@ -367,6 +374,9 @@ function translatePage(lang) {
       document.body.removeChild(indicator);
     }, 500);
   }, 2000);
+
+  // Toggle translated class on .sec1
+  document.querySelector('.sec1').classList.toggle('translated');
 }
 
 // Make translatePage function globally available
@@ -394,4 +404,15 @@ document.addEventListener('DOMContentLoaded', () => {
     languageIcon.style.padding = '8px';
     languageIcon.style.color = '#007bff';
   }
+  
+  // Add event listener to translate button
+  const translateBtn = document.getElementById('translate-btn');
+  if (translateBtn) {
+    translateBtn.addEventListener('click', () => {
+      const currentLang = document.documentElement.lang;
+      const newLang = currentLang === 'ar' ? 'en' : 'ar';
+      translatePage(newLang);
+    });
+  }
 });
+/* End of Selection */
