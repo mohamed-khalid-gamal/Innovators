@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -12,6 +12,9 @@
       rel="preconnect"
       href="https://fonts.gstatic.com"
       crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
       rel="stylesheet" />
@@ -27,59 +30,57 @@
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous" />
  
-    <link
-      rel="stylesheet"
-      href="css/rtl.css" />
-    <link
-      rel="stylesheet"
-      href="css/book.css" />
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/book.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/dual-language.css" />
+    
     <link
       rel="icon"
       href="imgs/Artboard 1 copy.svg"
       type="image/x-icon" />
-    <title>المخترعون - احجز الآن</title>
+    <title>المخترعون - Mukhtar3oon</title>
   </head>
   <body>
    
     <div class="form-container">
       <div class="form-header">
-        <img
-          src="imgs/logo.webp"
-          alt="المخترعون" />
-        <h2>ابدأ رحلة طفلك التعليمية اليوم</h2>
-        <p
-          >املأ النموذج التالي، وفريقنا سيتواصل معك لتأكيد الحجز وتفاصيل
-          البدء</p
-        >
+        <div class="header-top">
+          <img
+            src="imgs/logo.webp"
+            alt="المخترعون" />
+        </div>
+        <div class="form-header-content">
+          <h2 data-translate="formTitle">ابدأ رحلة طفلك التعليمية اليوم</h2>
+          <p data-translate="formSubtitle">املأ النموذج التالي، وفريقنا سيتواصل معك لتأكيد الحجز وتفاصيل البدء</p>
+        </div>
       </div>
 
       <form id="registrationForm">
         <div class="form-group">
-          <h3 class="section-title">اسم الطفل</h3>
+          <h3 class="section-title" data-translate="childName">اسم الطفل</h3>
           <input
             type="text"
             class="form-control"
+            id="childNameInput"
+            data-translate-placeholder="childName"
+            placeholder="اسم الطفل"
             required />
         </div>
-
+      
         <div class="form-group">
-          <h3 class="section-title">رقم الهاتف</h3>
+          <h3 class="section-title" data-translate="phoneNumber">رقم الهاتف</h3>
           <input
             type="tel"
             class="form-control"
+            id="phoneNumberInput"
+            data-translate-placeholder="phoneNumber"
+            placeholder="رقم الهاتف"
             required />
         </div>
-
+      
         <div class="form-group">
-          <h3 class="section-title">منطقة السكن</h3>
-          <input
-            type="text"
-            class="form-control"
-            required />
-        </div>
-
-        <div class="form-group">
-          <h3 class="section-title">عمر الطفل</h3>
+          <h3 class="section-title" data-translate="childAge">عمر الطفل</h3>
           <select
             class="form-control"
             required>
@@ -87,255 +88,279 @@
               value=""
               disabled
               selected
-              >اختر العمر</option
-            >
-            <option value="6-8">6-8 سنوات</option>
-            <option value="9-11">9-11 سنة</option>
-            <option value="12-14">12-14 سنة</option>
-            <option value="15-17">15-17 سنة</option>
+              data-translate="selectAge"> منطقة السكن</option>
+            <option value="cairo" data-translate="cairo">قاهرة</option>
+            <option value="alex" data-translate="alex">اسكندرية</option>
+            <option value="herghada" data-translate="herghada">الغردقة</option>
+          </select>
+        </div>
+      
+        <div class="form-group">
+          <h3 class="section-title" data-translate="childAge">عمر الطفل</h3>
+          <select
+            class="form-control"
+            required>
+            <option
+              value=""
+              disabled
+              selected
+              data-translate="selectAge">اختر العمر</option>
+            <option value="6-8" data-translate="age68">6-8 سنوات</option>
+            <option value="9-11" data-translate="age911">9-11 سنة</option>
+            <option value="12-14" data-translate="age1214">12-14 سنة</option>
+            <option value="15-17" data-translate="age1517">15-17 سنة</option>
           </select>
         </div>
         
         <div class="appointment-section">
-          <h3 class="section-title">طريقة الحضور</h3>
+          <h3 class="section-title" data-translate="attendanceMethod">طريقة الحضور</h3>
 
-        <div class="form-group">
-          <div class="radio-group">
-            <div class="radio-option">
-              <input
-                type="radio"
-                id="online"
-                name="attendance"
-                value="online" />
-              <label for="online"
-                >Offline (عن طريق الحضور فى مقر الأكاديمة)</label
-              >
-            </div>
-            <div class="radio-option">
-              <input
-                type="radio"
-                id="inperson"
-                name="attendance"
-                value="inperson" />
-              <label for="inperson">Online (عن طريق الأنترنت)</label>
+          <div class="form-group">
+            <div class="radio-group">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="offline"
+                  name="attendance"
+                  value="offline" />
+                <label for="offline" data-translate="offline">حضوري (في موقع الأكاديمية)</label>
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="online"
+                  name="attendance"
+                  value="online" />
+                <label for="online" data-translate="online">عبر الإنترنت</label>
+              </div>
             </div>
           </div>
         </div>
-        </div>
 
         <div class="note">
-          <p
-            >الحضور يكون مرة اسبوعيا في موعد ثابت , لراحة حضراتكم برجاء اختيار 3
-            مواعيد مناسبة حتي نسطيتع اختيار موعد يناسب حضراتكم </p
-          >
+          <p data-translate="note">الحضور يكون مرة اسبوعيا في موعد ثابت , لراحة حضراتكم برجاء اختيار 3 مواعيد مناسبة حتي نسطيتع اختيار موعد يناسب حضراتكم</p>
         </div>
 
-<!-- الميعاد الأول -->
+<!-- First Appointment -->
 <div class="appointment-section">
-  <h3 class="section-title">الميعاد الأول</h3>
-
-  <!-- اختيار اليوم -->
+  <h3 class="section-title" data-translate="firstAppointment">الميعاد الأول</h3>
+  
+  <!-- Day Selection -->
   <div class="form-group">
     <div class="radio-group">
       <div class="radio-option">
         <input type="radio" id="day1_1" name="day1" value="sunday" />
-        <label for="day1_1">الأحد</label>
+        <label for="day1_1" data-translate="sunday">الأحد</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day1_2" name="day1" value="monday" />
-        <label for="day1_2">الاثنين</label>
+        <label for="day1_2" data-translate="monday">الاثنين</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day1_3" name="day1" value="tuesday" />
-        <label for="day1_3">الثلاثاء</label>
+        <label for="day1_3" data-translate="tuesday">الثلاثاء</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day1_4" name="day1" value="wednesday" />
-        <label for="day1_4">الأربعاء</label>
+        <label for="day1_4" data-translate="wednesday">الأربعاء</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day1_5" name="day1" value="thursday" />
-        <label for="day1_5">الخميس</label>
+        <label for="day1_5" data-translate="thursday">الخميس</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day1_6" name="day1" value="friday" />
-        <label for="day1_6">الجمعة</label>
+        <label for="day1_6" data-translate="friday">الجمعة</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day1_7" name="day1" value="saturday" />
-        <label for="day1_7">السبت</label>
+        <label for="day1_7" data-translate="saturday">السبت</label>
       </div>
     </div>
   </div>
 
-  <!-- اختيار التوقيت -->
-  <h3 class="section-title">الوقت المناسب للميعاد الأول</h3>
+  <h3 class="section-title" data-translate="preferredTimeFirst">الوقت المناسب للميعاد الأول</h3>
 
+  <!-- Time Selection -->
   <div class="form-group">
     <div class="radio-group">
       <div class="radio-option">
         <input type="radio" id="time1_1" name="time1" value="10am" />
-        <label for="time1_1">10 صباحًا</label>
+        <label for="time1_1" data-translate="time10am">10 صباحًا</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time1_2" name="time1" value="12pm" />
-        <label for="time1_2">12 ظهرًا</label>
+        <label for="time1_2" data-translate="time12pm">12 ظهرًا</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time1_3" name="time1" value="2pm" />
-        <label for="time1_3">2 عصرًا</label>
+        <label for="time1_3" data-translate="time2pm">2 عصرًا</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time1_4" name="time1" value="4pm" />
-        <label for="time1_4">4 عصرًا</label>
+        <label for="time1_4" data-translate="time4pm">4 عصرًا</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time1_5" name="time1" value="6pm" />
-        <label for="time1_5">6 مساءً</label>
+        <label for="time1_5" data-translate="time6pm">6 مساءً</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time1_6" name="time1" value="8pm" />
-        <label for="time1_6">8 مساءً</label>
+        <label for="time1_6" data-translate="time8pm">8 مساءً</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time1_6" name="time1" value="10pm" />
+        <label for="time1_6" data-translate="time8pm">10 مساءً</label>
       </div>
     </div>
   </div>
 </div>
 
-<!-- الميعاد الثاني -->
+<!-- Second Appointment -->
 <div class="appointment-section">
-  <h3 class="section-title">الميعاد الثاني</h3>
+  <h3 class="section-title" data-translate="secondAppointment">الميعاد الثاني</h3>
   
-  <!-- اختيار اليوم -->
+  <!-- Day Selection -->
   <div class="form-group">
     <div class="radio-group">
       <div class="radio-option">
         <input type="radio" id="day2_1" name="day2" value="sunday" />
-        <label for="day2_1">الأحد</label>
+        <label for="day2_1" data-translate="sunday">الأحد</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day2_2" name="day2" value="monday" />
-        <label for="day2_2">الاثنين</label>
+        <label for="day2_2" data-translate="monday">الاثنين</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day2_3" name="day2" value="tuesday" />
-        <label for="day2_3">الثلاثاء</label>
+        <label for="day2_3" data-translate="tuesday">الثلاثاء</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day2_4" name="day2" value="wednesday" />
-        <label for="day2_4">الأربعاء</label>
+        <label for="day2_4" data-translate="wednesday">الأربعاء</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day2_5" name="day2" value="thursday" />
-        <label for="day2_5">الخميس</label>
+        <label for="day2_5" data-translate="thursday">الخميس</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day2_6" name="day2" value="friday" />
-        <label for="day2_6">الجمعة</label>
+        <label for="day2_6" data-translate="friday">الجمعة</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day2_7" name="day2" value="saturday" />
-        <label for="day2_7">السبت</label>
+        <label for="day2_7" data-translate="saturday">السبت</label>
       </div>
     </div>
   </div>
-  <h3 class="section-title">الوقت المناسب للميعاد التانى</h3>
 
-  <!-- اختيار التوقيت -->
+  <h3 class="section-title" data-translate="preferredTimeSecond">الوقت المناسب للميعاد الثاني</h3>
+
+  <!-- Time Selection -->
   <div class="form-group">
     <div class="radio-group">
       <div class="radio-option">
         <input type="radio" id="time2_1" name="time2" value="10am" />
-        <label for="time2_1">10 صباحًا</label>
+        <label for="time2_1" data-translate="time10am">10 صباحًا</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time2_2" name="time2" value="12pm" />
-        <label for="time2_2">12 ظهرًا</label>
+        <label for="time2_2" data-translate="time12pm">12 ظهرًا</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time2_3" name="time2" value="2pm" />
-        <label for="time2_3">2 عصرًا</label>
+        <label for="time2_3" data-translate="time2pm">2 عصرًا</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time2_4" name="time2" value="4pm" />
-        <label for="time2_4">4 عصرًا</label>
+        <label for="time2_4" data-translate="time4pm">4 عصرًا</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time2_5" name="time2" value="6pm" />
-        <label for="time2_5">6 مساءً</label>
+        <label for="time2_5" data-translate="time6pm">6 مساءً</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time2_6" name="time2" value="8pm" />
-        <label for="time2_6">8 مساءً</label>
+        <label for="time2_6" data-translate="time8pm">8 مساءً</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time2_6" name="time2" value="10pm" />
+        <label for="time2_6" data-translate="time8pm">10 مساءً</label>
       </div>
     </div>
   </div>
 </div>
 
-<!-- الميعاد الثالث -->
+<!-- Third Appointment -->
 <div class="appointment-section">
-  <h3 class="section-title">الميعاد الثالث</h3>
+  <h3 class="section-title" data-translate="thirdAppointment">الميعاد الثالث</h3>
   
-  <!-- اختيار اليوم -->
+  <!-- Day Selection -->
   <div class="form-group">
     <div class="radio-group">
       <div class="radio-option">
         <input type="radio" id="day3_1" name="day3" value="sunday" />
-        <label for="day3_1">الأحد</label>
+        <label for="day3_1" data-translate="sunday">الأحد</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day3_2" name="day3" value="monday" />
-        <label for="day3_2">الاثنين</label>
+        <label for="day3_2" data-translate="monday">الاثنين</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day3_3" name="day3" value="tuesday" />
-        <label for="day3_3">الثلاثاء</label>
+        <label for="day3_3" data-translate="tuesday">الثلاثاء</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day3_4" name="day3" value="wednesday" />
-        <label for="day3_4">الأربعاء</label>
+        <label for="day3_4" data-translate="wednesday">الأربعاء</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day3_5" name="day3" value="thursday" />
-        <label for="day3_5">الخميس</label>
+        <label for="day3_5" data-translate="thursday">الخميس</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day3_6" name="day3" value="friday" />
-        <label for="day3_6">الجمعة</label>
+        <label for="day3_6" data-translate="friday">الجمعة</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="day3_7" name="day3" value="saturday" />
-        <label for="day3_7">السبت</label>
+        <label for="day3_7" data-translate="saturday">السبت</label>
       </div>
     </div>
   </div>
-  <h3 class="section-title">الوقت المناسب للميعاد التالت</h3>
 
-  <!-- اختيار التوقيت -->
+  <h3 class="section-title" data-translate="preferredTimeThird">الوقت المناسب للميعاد الثالث</h3>
+
+  <!-- Time Selection -->
   <div class="form-group">
     <div class="radio-group">
       <div class="radio-option">
         <input type="radio" id="time3_1" name="time3" value="10am" />
-        <label for="time3_1">10 صباحًا</label>
+        <label for="time3_1" data-translate="time10am">10 صباحًا</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time3_2" name="time3" value="12pm" />
-        <label for="time3_2">12 ظهرًا</label>
+        <label for="time3_2" data-translate="time12pm">12 ظهرًا</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time3_3" name="time3" value="2pm" />
-        <label for="time3_3">2 عصرًا</label>
+        <label for="time3_3" data-translate="time2pm">2 عصرًا</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time3_4" name="time3" value="4pm" />
-        <label for="time3_4">4 عصرًا</label>
+        <label for="time3_4" data-translate="time4pm">4 عصرًا</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time3_5" name="time3" value="6pm" />
-        <label for="time3_5">6 مساءً</label>
+        <label for="time3_5" data-translate="time6pm">6 مساءً</label>
       </div>
       <div class="radio-option">
         <input type="radio" id="time3_6" name="time3" value="8pm" />
-        <label for="time3_6">8 مساءً</label>
+        <label for="time3_6" data-translate="time8pm">8 مساءً</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time3_6" name="time3" value="10pm" />
+        <label for="time3_6" data-translate="time8pm">10 مساءً</label>
       </div>
     </div>
   </div>
@@ -343,7 +368,7 @@
         <button
           type="submit"
           class="submit-btn"
-          >تأكيد</button
+          data-translate="confirm">تأكيد</button
         >
       </form>
     </div>
@@ -352,5 +377,34 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-LMuzWE3GqzXZ+c+eXc9CJtnNpVRLDFj8JXpz+fA+d7D1ZpLC/qZZQUdVDCWiTkP"
       crossorigin="anonymous"></script>
+      
+    <script src="js/carousel.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/translate.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the language from URL parameter, localStorage, or default to Arabic
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const currentLang = urlLang || localStorage.getItem('language') || 'ar';
+        
+        // Set initial language
+        translatePage(currentLang);
+        
+        // Set document direction
+        document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+        document.documentElement.lang = currentLang;
+        
+        // Add language switcher if it doesn't exist
+        if (!document.querySelector('.language-switcher')) {
+            createLanguageSwitcher();
+        }
+        
+        // Update language switcher state
+        updateLanguageSwitcher();
+    });
+    </script>
   </body>
 </html>

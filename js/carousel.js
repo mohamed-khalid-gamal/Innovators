@@ -45,6 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
             vertical-align: middle;
             will-change: transform;
         }
+
+        /* RTL specific styles */
+        [dir="rtl"] .auto-scroll-container {
+            direction: rtl;
+        }
+        
+        [dir="rtl"] #projects .photos img,
+        [dir="rtl"] #projects .videos .image-container .video-card {
+            margin-right: 0;
+            margin-left: 12px;
+        }
     `;
   document.head.appendChild(style);
 
@@ -68,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let userInteracting = false;
     let itemWidth = 0;
     let containerWidth = 0;
+    const isRTL = document.documentElement.dir === 'rtl';
 
     // Calculate dimensions
     function updateDimensions() {
@@ -114,6 +126,19 @@ document.addEventListener("DOMContentLoaded", function () {
           requestAnimationFrame(animation);
         } else {
           isScrolling = false;
+          
+          // Check if we've reached the end and need to loop back
+          if (!userInteracting) {
+            const maxScroll = container.scrollWidth - containerWidth;
+            const currentPosition = container.scrollLeft;
+            
+            // If we're at the end (with small tolerance), loop back to beginning
+            if (Math.abs(currentPosition - maxScroll) < 5) {
+              setTimeout(() => {
+                container.scrollLeft = 0;
+              }, 50);
+            }
+          }
         }
       }
 
@@ -126,23 +151,35 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isScrolling || userInteracting) return;
 
       const maxScroll = container.scrollWidth - containerWidth;
-      const nextPosition = container.scrollLeft + itemWidth;
-
-      // If near the end, smoothly loop back to start
-      if (container.scrollLeft >= maxScroll - itemWidth) {
-        // First complete the scroll to end with shorter duration
-        smoothScroll(maxScroll, duration / 2);
-
-        // Then after a short delay, quickly but smoothly jump back to start
-        setTimeout(() => {
-          container.scrollLeft = 0;
-        }, duration / 2 + 50);
+      const currentScroll = container.scrollLeft;
+      
+      if (isRTL) {
+        // For RTL, scrollLeft behavior can vary across browsers
+        // In standard RTL handling, most browsers use negative values or values decreasing from 0
+        if (Math.abs(currentScroll) <= 1) { // Using abs to handle slight variations
+          // If we're at the start, jump to the end
+          container.scrollLeft = maxScroll;
+          smoothScroll(maxScroll, duration);
+        } else {
+          // Normal scroll to previous position (moving right to left)
+          smoothScroll(currentScroll + itemWidth, duration);
+        }
       } else {
-        // Normal scroll to next position
-        smoothScroll(nextPosition, duration);
+        // For LTR, we scroll towards the right (positive direction)
+        if (currentScroll >= maxScroll - 5) { // Small tolerance for rounding errors
+          // If we're near the end, jump to the start and animate to position 0
+          container.scrollLeft = 0;
+          smoothScroll(0, duration);
+        } else {
+          // Normal scroll to next position
+          smoothScroll(currentScroll + itemWidth, duration);
+        }
       }
     }
 
+    // Clear any existing interval before setting a new one
+    clearInterval(scrollInterval);
+    
     // Start the interval
     scrollInterval = setInterval(scrollNext, interval);
 
@@ -157,6 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         userInteracting = false;
         updateDimensions(); // Re-calculate in case window size changed
+        clearInterval(scrollInterval); // Clear any existing interval
         scrollInterval = setInterval(scrollNext, interval);
       }, 1000);
     }
@@ -166,11 +204,30 @@ document.addEventListener("DOMContentLoaded", function () {
     container.addEventListener("mouseleave", resumeScrolling);
     container.addEventListener("touchstart", pauseScrolling, { passive: true });
     container.addEventListener("touchend", resumeScrolling);
+    
+    // Ensure we remove any duplicate event listeners
+    function addEventListenerOnce(element, type, listener, options) {
+      element.removeEventListener(type, listener);
+      element.addEventListener(type, listener, options);
+    }
+    
+    // Replace existing listeners with once-added versions
+    addEventListenerOnce(container, "mouseenter", pauseScrolling);
+    addEventListenerOnce(container, "mouseleave", resumeScrolling);
+    addEventListenerOnce(container, "touchstart", pauseScrolling, { passive: true });
+    addEventListenerOnce(container, "touchend", resumeScrolling);
 
-    // Handle window resize
-    window.addEventListener("resize", () => {
-      updateDimensions();
-    });
+    // Handle window resize with debounce
+    let resizeTimeout;
+    function handleResize() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        updateDimensions();
+      }, 250);
+    }
+    
+    window.removeEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Start with initial scroll after a short delay
     setTimeout(scrollNext, 500);
@@ -189,22 +246,21 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
 
-  enhancedAutoScroll(photosCarousel, 1000, 600); // Photos: interval 2s, animation 1.2s
-  enhancedAutoScroll(videosCarousel, 1000, 600); // Videos: interval 2s, animation 1.2s
+  // Fix the inconsistency between comments and actual parameters
+  enhancedAutoScroll(photosCarousel, 2000, 1200); // Photos: interval 2s, animation 1.2s
+  enhancedAutoScroll(videosCarousel, 2000, 1200); // Videos: interval 2s, animation 1.2s
 
   // Make sure all contents are properly visible
   function optimizeContent() {
     if (photosCarousel) {
-      Array.from(photosCarousel.children).forEach((img) => {
-        if (img.tagName === "IMG") {
-          img.loading = "eager";
-          img.decoding = "async";
-        }
+      Array.from(photosCarousel.querySelectorAll("img")).forEach((img) => {
+        img.loading = "eager";
+        img.decoding = "async";
       });
     }
 
     if (videosCarousel) {
-      Array.from(videosCarousel.querySelectorAll(".card-thumb img")).forEach(
+      Array.from(videosCarousel.querySelectorAll(".card-thumb img, img")).forEach(
         (img) => {
           // Ensure thumbnails load properly
           img.loading = "eager";
@@ -214,9 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Run optimization
   optimizeContent();
 
-  // Ensure optimization runs after images load
   window.addEventListener("load", optimizeContent);
 });

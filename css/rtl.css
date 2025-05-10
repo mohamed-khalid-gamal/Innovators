@@ -1,9 +1,79 @@
 /* ملف CSS لتحويل اتجاه الموقع من اليسار إلى اليمين للغة العربية */
+/* RTL version for Arabic language support */
+body {
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
 
+.form-container {
+  direction: rtl;
+}
+
+.form-header,
+.section-title,
+label,
+button,
+.note,
+.radio-option {
+  text-align: right;
+}
+
+/* RTL specific styling */
+.radio-group {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+.radio-option {
+  margin-left: 15px;
+  margin-right: 0;
+}
+
+/* Ensure proper alignment for form elements */
+.form-group {
+  text-align: right;
+}
+
+/* Ensure button alignment */
+.submit-btn {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Fix input field alignment */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+  text-align: right;
+  padding-right: 15px;
+  padding-left: 5px;
+}
+
+/* Fix placeholder alignment */
+::placeholder {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Fix dropdown arrow position */
+select {
+  background-position: left 10px center;
+  padding-left: 25px;
+}
 /* تطبيق الاتجاه من اليمين إلى اليسار على العناصر الرئيسية */
 html, body {
     direction: rtl;
     text-align: right;
+    transition: all 0.3s ease;
+}
+
+/* Language switch transition effects */
+.content-wrapper {
+    transition: all 0.3s ease;
 }
 
 /* تعديل اتجاه العناصر في الهيدر */
@@ -18,10 +88,32 @@ header img {
 
 header ul {
     padding-right: 0;
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+header ul li {
+    margin-left: 0;
+    margin-right: 15px;
 }
 
 header .i_btn {
     flex-direction: row-reverse;
+}
+
+/* Navigation buttons styling */
+.nav-button, 
+.book_now, 
+button {
+    font-family: 'Tajawal', sans-serif;
+    letter-spacing: normal;
+}
+
+/* Fix dropdown menus in RTL */
+.dropdown-menu {
+    text-align: right;
+    right: 0;
+    left: auto;
 }
 
 /* تعديل اتجاه العناصر في القسم الرئيسي */
@@ -42,6 +134,33 @@ header .i_btn {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     padding: 6px 20px 5px 10px;
+}
+
+/* Apply border classes for dynamic switching */
+.border-radius-left {
+    border-radius: 10px 0 0 10px;
+}
+
+.border-radius-right {
+    border-radius: 0 10px 10px 0;
+}
+
+/* Shadow direction classes */
+.shadow-right {
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-left {
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Background position classes */
+.bg-position-right {
+    background-position: left center;
+}
+
+.bg-position-left {
+    background-position: right center;
 }
 
 .sec1 .right h1 span::after {
@@ -95,13 +214,223 @@ header .i_btn {
 
 .form-control {
     width: 100%;
-    padding: 10px;
+    padding: 10px 15px 10px 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     direction: rtl;
     text-align: right;
+    font-family: 'Tajawal', sans-serif;
 }
 
 .radio-option, .checkbox-option {
     justify-content: flex-start;
+    padding-left: 0;
+    padding-right: 30px;
+    position: relative;
+}
+
+/* Fix radio/checkbox position */
+.radio-option input[type="radio"],
+.checkbox-option input[type="checkbox"] {
+    position: absolute;
+    right: 0;
+    left: auto;
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/* Fix radio group layout */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+/* Fix label positions */
+label {
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* Fix button text for Arabic */
+.submit-btn, 
+.btn, 
+button {
+    font-family: 'Tajawal', sans-serif;
+    letter-spacing: normal;
+}
+
+/* Fix lists and icons */
+ul, ol {
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+.fa, .fas, .far, .fal, .fab {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+/* Courses section SVG positioning for RTL */
+.courses-section .course-card svg,
+.courses-section .course-item svg {
+    transform: scaleX(-1); /* Flip SVGs horizontally */
+}
+
+.courses-section .course-card .svg-left {
+    right: 0;
+    left: auto;
+    margin-right: 15px;
+    margin-left: 0;
+}
+
+.courses-section .course-card .svg-right {
+    left: 0;
+    right: auto;
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+/* Course card layout adjustments for RTL */
+.courses-section .course-card {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.courses-section .course-card .course-info {
+    margin-right: 0;
+    margin-left: 20px;
+    text-align: right;
+}
+
+.courses-section .course-card .course-image {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+/* Course content positioning */
+.courses-section .course-content {
+    flex-direction: row-reverse;
+}
+
+.courses-section .course-icon {
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+/* Course features list */
+.courses-section .course-features {
+    padding-right: 0;
+    text-align: right;
+}
+
+.courses-section .course-features li {
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+.courses-section .course-features li svg,
+.courses-section .course-features li i {
+    left: auto;
+    right: 0;
+}
+
+/* Course grid layout for RTL */
+.courses-section .courses-grid {
+    direction: rtl;
+}
+
+/* Course navigation buttons */
+.courses-section .course-nav-buttons {
+    flex-direction: row-reverse;
+}
+
+.courses-section .course-nav-buttons .prev-btn {
+    transform: scaleX(-1);
+}
+
+.courses-section .course-nav-buttons .next-btn {
+    transform: scaleX(-1);
+}
+
+/* Courses section SVG positioning for RTL */
+.courses-section .course-card svg,
+.courses-section .course-item svg {
+    transform: scaleX(-1); /* Flip SVGs horizontally */
+}
+
+.courses-section .course-card .svg-left {
+    right: 0;
+    left: auto;
+    margin-right: 15px;
+    margin-left: 0;
+}
+
+.courses-section .course-card .svg-right {
+    left: 0;
+    right: auto;
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+/* Course card layout adjustments for RTL */
+.courses-section .course-card {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.courses-section .course-card .course-info {
+    margin-right: 0;
+    margin-left: 20px;
+    text-align: right;
+}
+
+.courses-section .course-card .course-image {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+/* Course content positioning */
+.courses-section .course-content {
+    flex-direction: row-reverse;
+}
+
+.courses-section .course-icon {
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+/* Course features list */
+.courses-section .course-features {
+    padding-right: 0;
+    text-align: right;
+}
+
+.courses-section .course-features li {
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+.courses-section .course-features li svg,
+.courses-section .course-features li i {
+    left: auto;
+    right: 0;
+}
+
+/* Course grid layout for RTL */
+.courses-section .courses-grid {
+    direction: rtl;
+}
+
+/* Course navigation buttons */
+.courses-section .course-nav-buttons {
+    flex-direction: row-reverse;
+}
+
+.courses-section .course-nav-buttons .prev-btn {
+    transform: scaleX(-1);
+}
+
+.courses-section .course-nav-buttons .next-btn {
+    transform: scaleX(-1);
 }
