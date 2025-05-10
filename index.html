@@ -32,7 +32,7 @@
           <button><a href="book.html" data-translate="book_now" onclick="return preserveLanguage(this)">احجز الان</a></button>
           <i class="fa-solid fa-language" data-language="ar" title="Change Language" style="cursor: pointer; font-size: 1.5rem; padding: 8px; color: #007bff;" onclick="translatePage(this.getAttribute('data-language') === 'ar' ? 'en' : 'ar'); this.setAttribute('data-language', this.getAttribute('data-language') === 'ar' ? 'en' : 'ar');"></i>
         </div>
-         <button class="hamburger" id="openSidebar" aria-label="Open menu">
+        <button class="hamburger" id="openSidebar" aria-label="Open menu">
           <i class="fa fa-bars"></i>
         </button>
       </header>
@@ -895,14 +895,18 @@
     <script>
     // Add this script at the end of the body
     document.addEventListener('DOMContentLoaded', function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang');
-        const currentLang = urlLang || localStorage.getItem('language') || 'ar';
+        // Check if language is stored in localStorage
+        const currentLang = localStorage.getItem('language') || 'ar';
+        const langButton = document.querySelector('.fa-language');
         
-        translatePage(currentLang);
-        document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-        document.documentElement.lang = currentLang;
-        // ...
+        // Set initial language
+        if (currentLang === 'en') {
+            translatePage('en');
+            langButton.setAttribute('data-language', 'en');
+        } else {
+            translatePage('ar');
+            langButton.setAttribute('data-language', 'ar');
+        }
     });
     </script>
   </body>

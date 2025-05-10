@@ -49,7 +49,6 @@
           <img
             src="imgs/logo.webp"
             alt="المخترعون" />
-          <i class="fa-solid fa-language" data-language="ar" title="Change Language" style="cursor: pointer; font-size: 1.5rem; padding: 8px; color: #007bff;" onclick="translatePage(this.getAttribute('data-language') === 'ar' ? 'en' : 'ar'); this.setAttribute('data-language', this.getAttribute('data-language') === 'ar' ? 'en' : 'ar');"></i>
         </div>
         <div class="form-header-content">
           <h2 data-translate="formTitle">ابدأ رحلة طفلك التعليمية اليوم</h2>
@@ -81,14 +80,19 @@
         </div>
       
         <div class="form-group">
-          <h3 class="section-title" data-translate="residentialArea">منطقة السكن</h3>
-          <input
-            type="text"
+          <h3 class="section-title" data-translate="childAge">عمر الطفل</h3>
+          <select
             class="form-control"
-            id="residentialAreaInput"
-            data-translate-placeholder="residentialArea"
-            placeholder="منطقة السكن"
-            required />
+            required>
+            <option
+              value=""
+              disabled
+              selected
+              data-translate="selectAge"> منطقة السكن</option>
+            <option value="cairo" data-translate="cairo">قاهرة</option>
+            <option value="alex" data-translate="alex">اسكندرية</option>
+            <option value="herghada" data-translate="herghada">الغردقة</option>
+          </select>
         </div>
       
         <div class="form-group">
@@ -204,6 +208,10 @@
         <input type="radio" id="time1_6" name="time1" value="8pm" />
         <label for="time1_6" data-translate="time8pm">8 مساءً</label>
       </div>
+      <div class="radio-option">
+        <input type="radio" id="time1_6" name="time1" value="10pm" />
+        <label for="time1_6" data-translate="time8pm">10 مساءً</label>
+      </div>
     </div>
   </div>
 </div>
@@ -275,6 +283,10 @@
         <input type="radio" id="time2_6" name="time2" value="8pm" />
         <label for="time2_6" data-translate="time8pm">8 مساءً</label>
       </div>
+      <div class="radio-option">
+        <input type="radio" id="time2_6" name="time2" value="10pm" />
+        <label for="time2_6" data-translate="time8pm">10 مساءً</label>
+      </div>
     </div>
   </div>
 </div>
@@ -345,6 +357,10 @@
       <div class="radio-option">
         <input type="radio" id="time3_6" name="time3" value="8pm" />
         <label for="time3_6" data-translate="time8pm">8 مساءً</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" id="time3_6" name="time3" value="10pm" />
+        <label for="time3_6" data-translate="time8pm">10 مساءً</label>
       </div>
     </div>
   </div>

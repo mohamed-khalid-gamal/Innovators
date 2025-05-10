@@ -290,7 +290,6 @@ const translations = {
   }
 };
 
-/* Start of Selection */
 function getCurrentPage() {
   const path = window.location.pathname;
   if (path.includes('book.html')) {
@@ -305,34 +304,37 @@ function translatePage(lang) {
   const currentPage = getCurrentPage();
   console.log('Current page:', currentPage);
   
+  // Store the new language in localStorage immediately
+  localStorage.setItem('preferredLanguage', lang);
+  
   const elements = document.querySelectorAll('[data-translate], [data-translate-placeholder]');
   console.log('Found elements to translate:', elements.length);
   
+  if (!translations[currentPage] || !translations[currentPage][lang]) {
+    console.error('Translation not found for page or language:', currentPage, lang);
+    return;
+  }
+
   elements.forEach(element => {
     const contentKey = element.getAttribute('data-translate');
     const placeholderKey = element.getAttribute('data-translate-placeholder');
-
-    if (!translations[currentPage] || !translations[currentPage][lang]) {
-      console.error('Translation not found for page or language:', currentPage, lang);
-      return;
-    }
     
     if (contentKey) {
-        const translation = translations[currentPage][lang][contentKey];
-        if (translation) {
-            element.innerHTML = translation; // Use innerHTML to preserve any HTML tags
-        } else {
-            console.warn('No translation found for content key:', contentKey);
-        }
+      const translation = translations[currentPage][lang][contentKey];
+      if (translation) {
+        element.innerHTML = translation;
+      } else {
+        console.warn('No translation found for content key:', contentKey);
+      }
     }
 
     if (placeholderKey) {
-        const translation = translations[currentPage][lang][placeholderKey];
-        if (translation) {
-            element.placeholder = translation;
-        } else {
-            console.warn('No translation found for placeholder key:', placeholderKey);
-        }
+      const translation = translations[currentPage][lang][placeholderKey];
+      if (translation) {
+        element.placeholder = translation;
+      } else {
+        console.warn('No translation found for placeholder key:', placeholderKey);
+      }
     }
   });
   
@@ -347,72 +349,68 @@ function translatePage(lang) {
     directionStyle.id = 'direction-style';
     document.head.appendChild(directionStyle);
   }
-  
   directionStyle.textContent = `* { direction: ${lang === 'ar' ? 'rtl' : 'ltr'} !important; }`;
   
-  // Save language preference to local storage
-  localStorage.setItem('preferredLanguage', lang);
+  // Update the language icon's data-language attribute
+  const languageIcon = document.querySelector('.fa-solid.fa-language');
+  if (languageIcon) {
+    languageIcon.setAttribute('data-language', lang);
+  }
   
   // Visual indicator that translation happened
-  const indicator = document.createElement('div');
-  indicator.textContent = 'Language changed to ' + (lang === 'ar' ? 'Arabic' : 'English');
-  indicator.style.position = 'fixed';
-  indicator.style.top = '10px';
-  indicator.style.left = '50%';
-  indicator.style.transform = 'translateX(-50%)';
-  indicator.style.backgroundColor = 'rgba(0,0,0,0.7)';
-  indicator.style.color = 'white';
-  indicator.style.padding = '10px 20px';
-  indicator.style.borderRadius = '5px';
-  indicator.style.zIndex = '9999';
-  document.body.appendChild(indicator);
+  // const indicator = document.createElement('div');
+  // indicator.textContent = 'Language changed to ' + (lang === 'ar' ? 'Arabic' : 'English');
+  // indicator.style.position = 'fixed';
+  // indicator.style.top = '10px';
+  // indicator.style.left = '50%';
+  // indicator.style.transform = 'translateX(-50%)';
+  // indicator.style.backgroundColor = 'rgba(0,0,0,0.7)';
+  // indicator.style.color = 'white';
+  // indicator.style.padding = '10px 20px';
+  // indicator.style.borderRadius = '5px';
+  // indicator.style.zIndex = '9999';
+  // document.body.appendChild(indicator);
   
-  setTimeout(() => {
-    indicator.style.opacity = '0';
-    indicator.style.transition = 'opacity 0.5s';
-    setTimeout(() => {
-      document.body.removeChild(indicator);
-    }, 500);
-  }, 2000);
+  // setTimeout(() => {
+  //   indicator.style.opacity = '0';
+  //   indicator.style.transition = 'opacity 0.5s';
+  //   setTimeout(() => {
+  //     document.body.removeChild(indicator);
+  //   }, 500);
+  // }, 2000);
 
-  // Toggle translated class on .sec1
-  document.querySelector('.sec1').classList.toggle('translated');
+  // // Explicitly set the 'translated' class based on language
+  const sec1Element = document.querySelector('.sec1');
+  if (sec1Element) {
+    const shouldTranslate = (lang === 'ar');
+    sec1Element.classList.toggle('translated', shouldTranslate);
+  }
 }
 
 // Make translatePage function globally available
 window.translatePage = translatePage;
 
-// Initialize language on page load based on saved preference
+// Initialize language on page load and hook up the toggle button
 document.addEventListener('DOMContentLoaded', () => {
-  const savedLanguage = localStorage.getItem('preferredLanguage');
   const languageIcon = document.querySelector('.fa-solid.fa-language');
 
-  if (savedLanguage) {
-    translatePage(savedLanguage);
-    if (languageIcon) {
-      languageIcon.setAttribute('data-language', savedLanguage);
-    }
-  } else {
-    if (languageIcon) {
-      languageIcon.setAttribute('data-language', 'ar');
-    }
-  }
+  // Determine saved or default language
+  const savedLanguage = localStorage.getItem('preferredLanguage') || 'ar';
+  translatePage(savedLanguage);
 
   if (languageIcon) {
+    // Update icon attribute and styles
+    languageIcon.setAttribute('data-language', savedLanguage);
     languageIcon.style.cursor = 'pointer';
     languageIcon.style.fontSize = '1.5rem';
     languageIcon.style.padding = '8px';
     languageIcon.style.color = '#007bff';
-  }
-  
-  // Add event listener to translate button
-  const translateBtn = document.getElementById('translate-btn');
-  if (translateBtn) {
-    translateBtn.addEventListener('click', () => {
-      const currentLang = document.documentElement.lang;
-      const newLang = currentLang === 'ar' ? 'en' : 'ar';
-      translatePage(newLang);
+
+    // On-click, switch between Arabic and English
+    languageIcon.addEventListener('click', () => {
+      const current = document.documentElement.lang;
+      const nextLang = current === 'ar' ? 'en' : 'ar';
+      translatePage(nextLang);
     });
   }
 });
-/* End of Selection */
