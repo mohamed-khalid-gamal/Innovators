@@ -1,13 +1,11 @@
 // carousel.js - Ultra smooth and optimized auto-scrolling carousel
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Get the carousel containers
   const photosCarousel = document.querySelector("#projects .photos");
   const videosCarousel = document.querySelector(
     "#projects .videos .image-container",
   );
 
-  // Add enhanced styling for smooth scrolling
   const style = document.createElement("style");
   style.textContent = `
         .auto-scroll-container {
@@ -59,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
   document.head.appendChild(style);
 
-  // Apply styling to containers
   [photosCarousel, videosCarousel].forEach((container) => {
     if (!container) return;
     container.classList.add("auto-scroll-container");
@@ -81,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let containerWidth = 0;
     const isRTL = document.documentElement.dir === 'rtl';
 
-    // Calculate dimensions
     function updateDimensions() {
       containerWidth = container.clientWidth;
 
@@ -250,7 +246,6 @@ document.addEventListener("DOMContentLoaded", function () {
   enhancedAutoScroll(photosCarousel, 2000, 1200); // Photos: interval 2s, animation 1.2s
   enhancedAutoScroll(videosCarousel, 2000, 1200); // Videos: interval 2s, animation 1.2s
 
-  // Make sure all contents are properly visible
   function optimizeContent() {
     if (photosCarousel) {
       Array.from(photosCarousel.querySelectorAll("img")).forEach((img) => {

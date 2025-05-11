@@ -14,6 +14,7 @@
     <title data-translate="title">المخترعون</title>
   </head>
   <body>
+    <a href="#" id="arrow-up"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
     <main>
       <header>
         <img src="imgs/image 34.svg" alt="img">
@@ -22,7 +23,6 @@
             <li><a href="#courses" data-translate="nav_courses">كورساتنا</a></li>
             <li><a href="#why" data-translate="nav_why">لماذا مخترعون</a></li>
             <li><a href="#projects" data-translate="nav_projects">إنجازاتنا</a></li>
-            <li><a href="#pricing" data-translate="nav_pricing">الأسعار</a></li>
             <li><a href="#contact" data-translate="nav_faq">الأسئلة الشائعة</a></li>
           </ul>
         </nav>    
@@ -46,7 +46,6 @@
           <li><a href="#courses" data-translate="nav_courses">كورساتنا</a></li>
           <li><a href="#why" data-translate="nav_why">لماذا مخترعون</a></li>
           <li><a href="#projects" data-translate="nav_projects">إنجازاتنا</a></li>
-          <li><a href="#pricing" data-translate="nav_pricing">الأسعار</a></li>
           <li><a href="#contact" data-translate="nav_faq">الأسئلة الشائعة</a></li>
         </ul>
         <button class="sidebar-btn"><a href="book.html" data-translate="book_now" onclick="return preserveLanguage(this)">احجز الان</a></button>
@@ -55,10 +54,14 @@
       <script src="translate.js"></script>
     <div class="sec1">
         <div class="right">
-            <h1><span data-translate="hero_title_1">رحلة</span> <span><span data-translate="hero_title_2">الإكتشاف</span>
-                <div class="div">
-                <p>Mokhtarreon</p>
-            </div>  
+            <h1><span data-translate="hero_title_1">رحلة</span> <span>
+              <div class="special-text">
+              <span data-translate="hero_title_2">الإكتشاف</span>       
+                  <div class="div">
+                    <p>Mokhtarreon</p>
+                    </div>  
+                </div>
+              
         </span><br><span data-translate="hero_title_3">تبدأ من هنا</span></h1>
             
             <ul>
@@ -67,7 +70,7 @@
                 <li data-translate="list_item_3">معنا, لا يتعلم الطفل فحسب, بل يصنع شيئا يعبر به عن ذاته</li>
             </ul>
             <div class="btns">
-                <button class="btn1"><a href="#" data-translate="contact_us">تواصل معنا</a></button>
+                <button class="btn1"><a href="#contact" data-translate="contact_us">تواصل معنا</a></button>
                 <button class="btn2"><a href="https://eg-learn.vercel.app" data-translate="discover_platform">اكتشف منصة التعلم الإلكتروني</a></button>
             </div>
         </div>
@@ -250,7 +253,7 @@
           >من فكرة بسيطة إلى مشروع حقيقي، هنا نحتفل بإبداعات الطلاب التي أصبحت واقعا ملموسا
         </p>
       </div>
-      <div class="photos">
+      <div class="photos"style="direction: ltr !important;"  dir="ltr">
         <img loading="lazy" decoding="async" width="800" height="600" src="imgs/IMG_2511.webp" alt="Gallery image 1" srcset="imgs/IMG_2511.webp 800w, imgs/IMG_2511-small.webp 400w" sizes="(max-width: 800px) 400px, 800px">
         <img loading="lazy" decoding="async" width="800" height="600" src="imgs/IMG_2538.webp" alt="Gallery image 2" srcset="imgs/IMG_2538.webp 800w, imgs/IMG_2538-small.webp 400w" sizes="(max-width: 800px) 400px, 800px">
         <img loading="lazy" decoding="async" width="800" height="600" src="imgs/IMG_2566.webp" alt="Gallery image 3" srcset="imgs/IMG_2566.webp 800w, imgs/IMG_2566-small.webp 400w" sizes="(max-width: 800px) 400px, 800px">
@@ -276,7 +279,7 @@
       <div class="title d-flex justify-content-center mt-5 mb-5">
         <h3 data-translate="testimonials_title">أصوات النجاح طلابنا يحكون قصتهم</h3>
       </div>
-      <div class="videos">
+      <div class="videos" style="direction: ltr !important;" dir="ltr">
         <div class="image-container">
           <div class="card video-card">
             <div class="card-thumb">
@@ -540,7 +543,6 @@
     </section>
 <section id="pricing">
   <div class="brands">
-
     <div class="header-title">
       <h3 data-translate="partners_title">مع شركائنا نفتح لأطفالكم أبواب المستقبل</h3>
     </div>
@@ -631,7 +633,7 @@
         <div class="plan-header">
           <div class="plan-price-con">
               <h3 data-translate="plan_advanced_title">الخطة المتقدمة</h3>
-              <span class="badge rounded-pill text-bg " data-translate="plan_advanced_badge">الأكثر شعبية</span>
+              <span class="badge rounded-pill text-bg " data-translate="plan_advanced_badge">الأكثر تميز</span>
             <!-- <div class="plan-price">1200 EGP</div> -->
           </div>
         </div>
@@ -949,6 +951,18 @@
                 alert('حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى.');
             }
         });
+    </script>
+    <script>
+      const arrowUp = document.getElementById('arrow-up');
+      arrowUp.style.display = 'none';
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+          arrowUp.style.display = 'flex';
+        } else {
+          arrowUp.style.display = 'none';
+        }
+      });
+     
     </script>
   </body>
 </html>
