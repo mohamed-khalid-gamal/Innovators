@@ -76,6 +76,7 @@
             id="phoneNumberInput"
             data-translate-placeholder="phoneNumber"
             placeholder="رقم الهاتف"
+            title="Please enter a valid Egyptian phone number (e.g., 01xxxxxxxxx or +201xxxxxxxxx)"
             required />
         </div>
       
@@ -402,70 +403,152 @@
         updateLanguageSwitcher();
     });
 
-    document.getElementById('registrationForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
+    function isValidEgyptianPhone(phone) {
+        // Remove any spaces, dashes, or parentheses
+        phone = phone.replace(/[\s\-\(\)]/g, '');
+        
+        // Check for Egyptian mobile number patterns
+        const patterns = [
+            /^01[0125][0-9]{8}$/,  // 01x xxxxxxxx (11 digits)
+            /^\+201[0125][0-9]{8}$/ // +20 1x xxxxxxxx (13 digits)
+        ];
+        
+        return patterns.some(pattern => pattern.test(phone));
+    }
 
-      // اجمع البيانات من الفورم
-      const name = document.getElementById('childNameInput').value;
-      const phone = document.getElementById('phoneNumberInput').value;
-      const location = document.getElementById('locationInput').value;
-      const age = document.getElementById('ageInput').value;
-      const attendance_type = document.querySelector('input[name="attendance"]:checked')?.value === 'offline' ? 'in-person' : 'online';
+    // Add these validation functions
+    function validateForm() {
+        const name = document.getElementById('childNameInput').value;
+        const phone = document.getElementById('phoneNumberInput').value;
+        const location = document.getElementById('locationInput').value;
+        const age = document.getElementById('ageInput').value;
+        const attendance = document.querySelector('input[name="attendance"]:checked');
+        const day1 = document.querySelector('input[name="day1"]:checked');
+        const time1 = document.querySelector('input[name="time1"]:checked');
+        const day2 = document.querySelector('input[name="day2"]:checked');
+        const time2 = document.querySelector('input[name="time2"]:checked');
+        const day3 = document.querySelector('input[name="day3"]:checked');
+        const time3 = document.querySelector('input[name="time3"]:checked');
 
-      // الأيام والأوقات
-      const day1 = document.querySelector('input[name="day1"]:checked')?.value || '';
-      const time1 = document.querySelector('input[name="time1"]:checked')?.value || '';
-      const day2 = document.querySelector('input[name="day2"]:checked')?.value || '';
-      const time2 = document.querySelector('input[name="time2"]:checked')?.value || '';
-      const day3 = document.querySelector('input[name="day3"]:checked')?.value || '';
-      const time3 = document.querySelector('input[name="time3"]:checked')?.value || '';
+        const errors = [];
 
-      // جهز الـ body
-      const body = {
-        name,
-        phone,
-        location,
-        age,
-        attendance_type,
-        day1,
-        time1,
-        day2,
-        time2,
-        day3,
-        time3
-      };
-
-      try {
-        const response = await fetch('https://moktareon-backend.vercel.app/register', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body)
-        });
-
-        if (response.ok) {
-          Swal.fire({
-            icon: 'success',
-            title: 'تم الإرسال بنجاح!',
-            text: 'سيتم التواصل معك قريبًا.',
-            confirmButtonText: 'حسنًا'
-          });
-          document.getElementById('registrationForm').reset();
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'حدث خطأ!',
-            text: 'برجاء المحاولة مرة أخرى.',
-            confirmButtonText: 'حسنًا'
-          });
+        // Name validation
+        if (!name.trim()) {
+            errors.push('اسم الطفل غير موجود');
         }
-      } catch (error) {
-        Swal.fire({
-          icon: 'error',
-          title: 'حدث خطأ!',
-          text: 'برجاء التأكد من الاتصال بالإنترنت والمحاولة مرة أخرى.',
-          confirmButtonText: 'حسنًا'
-        });
-      }
+
+        // Phone validation
+        if (!phone) {
+            errors.push('رقم الهاتف غير موجود');
+        } else if (!isValidEgyptianPhone(phone)) {
+            errors.push('رقم الهاتف غير صالح');
+        }
+
+        if (!location) {
+            errors.push('المنطقة غير موجودة');
+        }
+
+        // Age validation
+        if (!age) {
+            errors.push('عمر الطفل غير موجود');
+        }
+
+        // Attendance validation
+        if (!attendance) {
+            errors.push('طريقة الحضور غير موجودة');
+        }
+
+        // Days and times validation
+        if (!day1 || !time1) {
+            errors.push('اليوم المفضل الأول غير موجود');
+        }
+        if (!day2 || !time2) {
+            errors.push('اليوم المفضل الثاني غير موجود');
+        }
+        if (!day3 || !time3) {
+            errors.push('اليوم المفضل الثالث غير موجود');
+        }
+
+        return errors;
+    }
+
+    // Modify your form submission code
+    document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const errors = validateForm();
+        console.log(errors);
+        if (errors.length > 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Please correct the following:',
+                html: errors.map(error => `<div class="text-start mb-2">• ${error}</div>`).join(''),
+                confirmButtonText: 'OK'
+            });
+            return;
+        }
+
+        // If validation passes, proceed with form submission
+        const name = document.getElementById('childNameInput').value;
+        const phone = document.getElementById('phoneNumberInput').value;
+        const location = document.getElementById('locationInput').value;
+        const age = document.getElementById('ageInput').value;
+        const attendance_type = document.querySelector('input[name="attendance"]:checked').value === 'offline' ? 'in-person' : 'online';
+
+        // الأيام والأوقات
+        const day1 = document.querySelector('input[name="day1"]:checked').value;
+        const time1 = document.querySelector('input[name="time1"]:checked').value;
+        const day2 = document.querySelector('input[name="day2"]:checked').value;
+        const time2 = document.querySelector('input[name="time2"]:checked').value;
+        const day3 = document.querySelector('input[name="day3"]:checked').value;
+        const time3 = document.querySelector('input[name="time3"]:checked').value;
+
+        // جهز الـ body
+        const body = {
+            name,
+            phone,
+            location,
+            age,
+            attendance_type,
+            day1,
+            time1,
+            day2,
+            time2,
+            day3,
+            time3
+        };
+
+        try {
+            const response = await fetch('https://moktareon-backend.vercel.app/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body)
+            });
+
+            if (response.ok) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'تم الإرسال بنجاح!',
+                    text: 'سيتم التواصل معك قريبًا.',
+                    confirmButtonText: 'حسنًا'
+                });
+                document.getElementById('registrationForm').reset();
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'حدث خطأ!',
+                    text: 'برجاء المحاولة مرة أخرى.',
+                    confirmButtonText: 'حسنًا'
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'حدث خطأ!',
+                text: 'برجاء التأكد من الاتصال بالإنترنت والمحاولة مرة أخرى.',
+                confirmButtonText: 'حسنًا'
+            });
+        }
     });
     </script>
   </body>

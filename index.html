@@ -973,7 +973,7 @@
           }
     
           await response.json();
-          Swal.fire({ title: '🎉 تم إرسال رسالتك بنجاح!', icon: 'success', confirmButtonText: 'حسنًا' });
+          Swal.fire({ title: ' تم إرسال رسالتك بنجاح!', icon: 'success', confirmButtonText: 'OK' });
           this.reset();
     
         } catch (error) {
@@ -986,7 +986,7 @@
           } else if (error.message.includes('Failed to fetch')) {
             msg = 'فشل الاتصال بالخادم. تحقق من الإنترنت وحاول مرة أخرى.';
           }
-          Swal.fire({ title: '⚠️ خطأ', text: msg, icon: 'error', confirmButtonText: 'حسنًا' });
+          Swal.fire({ title: '⚠️ خطأ', text: msg, icon: 'error', confirmButtonText: 'OK' });
         } finally {
           btn.disabled = false;
           btn.innerText = 'أرسل رسالتك';
