@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة التحكم - المخترعون</title>
+    <title>Dashboard - Mokhtar3oon</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -31,6 +31,7 @@
             padding: 15px;
             border-bottom: 1px solid #eee;
             transition: background-color 0.3s;
+            position: relative;
         }
         .message-item:hover, .booking-item:hover {
             background-color: #f8f9fa;
@@ -78,81 +79,51 @@
             padding: 10px 20px;
             border: 1px solid #ddd;
         }
+        .created-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
     </style>
 </head>
 <body>
     <div class="dashboard-container">
         <h1 class="mb-4">Dashboard</h1>
         
-        
         <!-- Tabs -->
         <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="messages-tab" data-bs-toggle="tab" href="#messages" role="tab">الرسائل</a>
+                <a class="nav-link active" id="messages-tab" data-bs-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="true">Messages</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="bookings-tab" data-bs-toggle="tab" href="#bookings" role="tab">الحجوزات</a>
+                <a class="nav-link" id="bookings-tab" data-bs-toggle="tab" href="#bookings" role="tab" aria-controls="bookings" aria-selected="false">Bookings</a>
             </li>
         </ul>
 
         <!-- Tab Content -->
         <div class="tab-content" id="dashboardTabsContent">
             <!-- Messages Tab -->
-            <div class="tab-pane fade show active" id="messages" role="tabpanel">
+            <div class="tab-pane fade show active" id="messages" role="tabpanel" aria-labelledby="messages-tab">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">الرسائل</h5>
-                        <span class="badge bg-light text-dark">5 رسائل جديدة</span>
+                        <h5 class="mb-0">Messages</h5>
+                        <span class="badge bg-light text-dark">0 New</span>
                     </div>
                     <div class="card-body p-0">
-                        <div class="message-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h6 class="mb-1">أحمد محمد</h6>
-                                    <p class="mb-1 text-muted">استفسار عن كورس البرمجة</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="message-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h6 class="mb-1">سارة أحمد</h6>
-                                    <p class="mb-1 text-muted">طلب معلومات عن الأسعار</p>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Messages will be inserted here -->
                     </div>
                 </div>
             </div>
 
             <!-- Bookings Tab -->
-            <div class="tab-pane fade" id="bookings" role="tabpanel">
+            <div class="tab-pane fade" id="bookings" role="tabpanel" aria-labelledby="bookings-tab">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">الحجوزات</h5>
-                        <span class="badge bg-light text-dark">3 حجوزات جديدة</span>
+                        <h5 class="mb-0">Bookings</h5>
+                        <span class="badge bg-light text-dark">0 New</span>
                     </div>
                     <div class="card-body p-0">
-                        <div class="booking-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h6 class="mb-1">محمد علي</h6>
-                                    <p class="mb-1">كورس الروبوتات والذكاء الاصطناعي</p>
-                                    <p class="mb-0 text-muted">الأحد - 10 صباحاً</p>
-                                </div>
-                                <span class="status-badge status-pending">قيد الانتظار</span>
-                            </div>
-                        </div>
-                        <div class="booking-item">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h6 class="mb-1">فاطمة محمود</h6>
-                                    <p class="mb-1">كورس تصميم المواقع</p>
-                                    <p class="mb-0 text-muted">الثلاثاء - 2 عصراً</p>
-                                </div>
-                                <span class="status-badge status-confirmed">مؤكد</span>
-                            </div>
-                        </div>
+                        <!-- Bookings will be inserted here -->
                     </div>
                 </div>
             </div>
@@ -161,44 +132,85 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Function to fetch messages from API
         async function fetchMessages() {
             try {
-                const response = await fetch('http://mokhtareon.runasp.net/api/messages');
-                const messages = await response.json();
+                const response = await fetch('https://moktareon-backend.vercel.app/message');
+                let messages = await response.json();
+                messages.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
                 updateMessagesUI(messages);
             } catch (error) {
                 console.error('Error fetching messages:', error);
             }
         }
 
-        // Function to update the messages UI
         function updateMessagesUI(messages) {
-            const messagesContainer = document.querySelector('#messages .card-body');
-            messagesContainer.innerHTML = ''; // Clear existing messages
-
-            messages.forEach(message => {
-                const messageElement = `
-                    <div class="message-item">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="mb-1">${message.name}</h6>
-                                <p class="mb-1 text-muted">${message.message}</p>
-                                <small class="text-muted">${message.email}</small>
-                            </div>
+            const container = document.querySelector('#messages .card-body');
+            container.innerHTML = '';
+            messages.forEach(msg => {
+                const date = new Date(msg.createdAt);
+                const formatted = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+                const html = `
+                <div class="message-item">
+                    <span class="badge bg-secondary created-badge">${formatted}</span>
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-user me-2 text-primary"></i>
+                        <div>
+                            <h6 class="mb-1">Name: ${msg.name}</h6>
+                            <p class="mb-1 text-muted">Email: ${msg.email}</p>
+                            <p class="mb-0 text-muted">Message: ${msg.message}</p>
                         </div>
                     </div>
-                `;
-                messagesContainer.innerHTML += messageElement;
+                </div>`;
+                container.innerHTML += html;
             });
-
-            // Update the badge count
-            const badgeElement = document.querySelector('#messages .badge');
-            badgeElement.textContent = `${messages.length} رسائل جديدة`;
+            document.querySelector('#messages .badge').textContent = `${messages.length} New`;
         }
 
-        // Fetch messages when the page loads
-        document.addEventListener('DOMContentLoaded', fetchMessages);
+        async function fetchBookings() {
+            try {
+                const response = await fetch('https://moktareon-backend.vercel.app/register');
+                let bookings = await response.json();
+                bookings.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+                updateBookingsUI(bookings);
+            } catch (error) {
+                console.error('Error fetching bookings:', error);
+            }
+        }
+
+        function updateBookingsUI(bookings) {
+            const container = document.querySelector('#bookings .card-body');
+            container.innerHTML = '';
+            bookings.forEach(bk => {
+                const date = new Date(bk.createdAt);
+                const formatted = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+                const daysTimes = `
+                    <span class="badge bg-info text-dark me-1">${bk.day1} - ${bk.time1}</span>
+                    <span class="badge bg-info text-dark me-1">${bk.day2} - ${bk.time2}</span>
+                    <span class="badge bg-info text-dark">${bk.day3} - ${bk.time3}</span>`;
+                const html = `
+                <div class="booking-item">
+                    <span class="badge bg-secondary created-badge">${formatted}</span>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="mb-1">Name: ${bk.name}</h6>
+                            <p class="mb-1">Phone: ${bk.phone}</p>
+                            <p class="mb-1">Location: ${bk.location}</p>
+                            <p class="mb-1">Age: ${bk.age}</p>
+                            <p class="mb-1">Attendance: ${bk.attendance_type === 'in-person' ? 'In-Person' : 'Online'}</p>
+                            <div>${daysTimes}</div>
+                        </div>
+                        <span class="status-badge status-pending">Pending</span>
+                    </div>
+                </div>`;
+                container.innerHTML += html;
+            });
+            document.querySelector('#bookings .badge').textContent = `${bookings.length} New`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchMessages();
+            fetchBookings();
+        });
     </script>
 </body>
 </html>
